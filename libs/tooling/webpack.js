@@ -9,12 +9,6 @@ function common({ __dirname, entry, plugins }) {
   return {
     devtool: 'cheap-module-source-map',
     entry,
-    resolve: {
-      root: [path.resolve(__dirname, '.')],
-      alias: {
-        '@src': path.resolve(__dirname, 'src/'),
-      },
-    },
     plugins: [
       new CleanPlugin({
         cleanStaleWebpackAssets: false,

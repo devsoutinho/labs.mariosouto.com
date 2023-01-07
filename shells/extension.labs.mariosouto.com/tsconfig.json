@@ -1,25 +1,18 @@
 {
   "compilerOptions": {
     "strict": true,
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "incremental": true,
+    "jsx": "react",
+    "module": "es6",
+    "target": "es6",
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
       "@src/*": ["./src/*"]
     }
   },
   "include": [
+    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
   ],
