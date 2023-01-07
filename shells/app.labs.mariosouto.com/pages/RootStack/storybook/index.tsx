@@ -1,9 +1,10 @@
 import React from "react";
-import { NavigationContext } from "@react-navigation/native";
 import { Box, Text, Touchable } from "@devsoutinho/sknui/native";
+import * as stories from "@devsoutinho/sknui/storybook/native";
 
-export function StorybookScreen({}: RootStackStorybookScreenProps) {
-  const navigation = React.useContext(NavigationContext);
+const allStoryNames = Object.keys(stories);
+
+export function StorybookScreen({ navigation }: RootStackStorybookScreenProps) {
   return (
     <Box
       styleSheet={{
@@ -16,16 +17,16 @@ export function StorybookScreen({}: RootStackStorybookScreenProps) {
           marginBottom: 20,
         }}
       >
-        {["Box", "Text"].map((componentName) => (
+        {allStoryNames.map((componentName) => (
           <Touchable
             key={componentName}
             styleSheet={{
-              padding: 10,
+              padding: 15,
               backgroundColor: "#eee",
               marginBottom: 1,
             }}
             onPress={() => {
-              navigation?.navigate("storybook/[componentName]", {
+              navigation.navigate("storybook/[componentName]", {
                 componentName,
               });
             }}

@@ -21,7 +21,7 @@ export function RootStackNavigator() {
       <RootStack.Screen
         name="storybook/[componentName]"
         component={StorybookComponentScreen}
-        options={{ title: 'Storybook' }}
+        options={({ route }) => ({ title: `Storybook Component - ${route.params.componentName}` })}
       />
     </RootStack.Navigator>
   )
