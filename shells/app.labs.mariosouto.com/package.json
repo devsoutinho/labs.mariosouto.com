@@ -17,6 +17,7 @@
     "@devsoutinho/sknui": "*"
   },
   "devDependencies": {
+    "babel-plugin-module-resolver": "4.1.0",
     "@babel/preset-env": "7.19.3",
     "@babel/core": "7.19.3",
     "@types/react": "~18.0.24",
