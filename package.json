@@ -7,8 +7,8 @@
     "shells/*"
   ],
   "scripts": {
-    "test": "yarn test:web && yarn test:app && yarn test:extension",
-    "lint": "yarn lint:web && yarn lint:app && yarn lint:extension",
+    "test": "yarn test:web && yarn test:app && yarn test:extension && yarn test:cli",
+    "lint": "yarn lint:web && yarn lint:app && yarn lint:extension && yarn lint:cli",
     "web": "yarn workspace web.labs.mariosouto.com",
     "dev:web": "yarn web dev",
     "lint:web": "yarn web lint",

@@ -23,6 +23,7 @@
     "shelljs": "0.8.5",
     "@types/inquirer": "9.0.3",
     "@devsoutinho/common-tooling": "*",
-    "@devsoutinho/common-test": "*"
+    "@devsoutinho/common-test": "*",
+    "@devsoutinho/common-eslint": "*"
   }
 }
