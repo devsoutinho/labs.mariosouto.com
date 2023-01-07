@@ -4,10 +4,12 @@ const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin: CleanPlugin } = require("clean-webpack-plugin");
 const HtmlPlugin = require("html-webpack-plugin");
 const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
+const webpack = require("webpack");
 
-function common({ __dirname, entry, plugins }) {
+function common({ __dirname, entry, plugins, outputFolder, target }) {
+  const outFolder = outputFolder || "dist";
   return {
-    devtool: 'cheap-module-source-map',
+    target,
     entry,
     plugins: [
       new CleanPlugin({
@@ -15,7 +17,7 @@ function common({ __dirname, entry, plugins }) {
       }),
       new CopyPlugin({
         patterns: [
-          { from: path.resolve("public"), to: path.resolve("dist"), }
+          { from: path.resolve("public"), to: path.resolve(outFolder), }
         ]
       }),
       ...plugins,
@@ -36,7 +38,7 @@ function common({ __dirname, entry, plugins }) {
     },
     output: {
       filename: "[name].js",
-      path: path.resolve(__dirname, "dist"),
+      path: path.resolve(__dirname, outFolder),
     },
   };
 }
@@ -44,7 +46,9 @@ function common({ __dirname, entry, plugins }) {
 module.exports = {
   TsconfigPathsPlugin,
   HtmlPlugin,
-  config({ __dirname, entry, plugins = [] }) {
+  BannerPlugin: webpack.BannerPlugin,
+  ShebangPlugin: require("webpack-shebang-plugin"),
+  config({ __dirname, entry, plugins = [], target, outputFolder }) {
     if (!__dirname) {
       throw new Error("Missing: `__dirname`");
     }
@@ -53,17 +57,19 @@ module.exports = {
       const isProduction = argv.mode === "production";
       const commonConfig = common({
         __dirname,
+        target,
         entry,
         plugins,
+        outputFolder,
       });
 
-      if(isProduction) {
+      if (isProduction) {
         return merge(commonConfig, {
           mode: "production",
           devtool: "source-map",
         });
       }
-      if(!isProduction) {
+      if (!isProduction) {
         return merge(commonConfig, {
           mode: "development",
           devtool: "cheap-module-source-map",

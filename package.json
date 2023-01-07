@@ -13,14 +13,23 @@
     "dev:web": "yarn web dev",
     "lint:web": "yarn web lint",
     "test:web": "yarn web test",
+    "build:web": "yarn web build",
     "app": "yarn workspace app.labs.mariosouto.com",
     "dev:app": "yarn app dev",
     "lint:app": "yarn app lint",
     "test:app": "yarn app test",
+    "build:app": "yarn app build",
     "extension": "yarn workspace extension.labs.mariosouto.com",
     "dev:extension": "yarn extension dev",
-    "build:extension": "yarn extension build",
     "lint:extension": "yarn extension lint",
-    "test:extension": "yarn extension test"
+    "test:extension": "yarn extension test",
+    "build:extension": "yarn extension build",
+    "cli": "yarn workspace cli.labs.mariosouto.com",
+    "dev:cli": "yarn cli dev",
+    "build:cli": "yarn cli build",
+    "lint:cli": "yarn cli lint",
+    "test:cli": "yarn cli test",
+    "dscli": "dscli",
+    "postinstall": "cd ./shells/cli.labs.mariosouto.com && yarn link && cd ../../"
   }
 }
