@@ -43175,7 +43175,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function module(name) {
     // eslint-disable-next-line no-console
-    console.log(`Hello ${name}, world!`);
+    console.log(`Hello ${name}, have a great day!!!`);
 }
 
 
@@ -53506,9 +53506,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const program = new commander__WEBPACK_IMPORTED_MODULE_1__.Command();
-(0,_src_infra_log__WEBPACK_IMPORTED_MODULE_2__.log)(chalk__WEBPACK_IMPORTED_MODULE_0__["default"].bgHex("#f35627").inverse("Welcome to the CLI!"));
+(0,_src_infra_log__WEBPACK_IMPORTED_MODULE_2__.log)(chalk__WEBPACK_IMPORTED_MODULE_0__["default"].hex("#f35627")("Welcome to the DS_CLI! \n\n"));
 (0,_src_modules_welcome_register__WEBPACK_IMPORTED_MODULE_3__.register)(program);
-program.parse(process.argv);
+if (process.argv.length < 3) {
+    program.help();
+}
+else {
+    program.parse(process.argv);
+}
 
 })();
 

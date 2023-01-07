@@ -5,8 +5,12 @@ import { register as registerWelcome } from "@src/modules/welcome/register";
 
 const program = new Command();
 
-log(chalk.bgHex("#f35627").inverse("Welcome to the CLI!"));
+log(chalk.hex("#f35627")("Welcome to the DS_CLI! \n\n"));
 
 registerWelcome(program);
 
-program.parse(process.argv);
+if (process.argv.length < 3) {
+  program.help();
+} else {
+  program.parse(process.argv);
+}
