@@ -7,6 +7,10 @@
     "base.ts"
   ],
   "devDependencies": {
+    "react-native": "0.70.5",
+    "jest-expo": "47.0.1",
+    "@testing-library/jest-native": "5.4.1",
+    "@testing-library/react-native": "11.5.0",
     "jest-environment-jsdom": "29.3.1",
     "@testing-library/react": "13.4.0",
     "@testing-library/jest-dom": "5.16.5",

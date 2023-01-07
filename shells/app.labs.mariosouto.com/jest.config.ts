@@ -1,1 +1,1 @@
-export { default } from "@devsoutinho/common-test/base";
+export { default } from "@devsoutinho/common-test/native";

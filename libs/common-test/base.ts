@@ -15,7 +15,8 @@ const config: Config.InitialOptions = {
       configFile: path.resolve(__dirname, '.babelrc'),
     }],
   },
-  snapshotSerializers: []
+  snapshotSerializers: [],
+  clearMocks: true,
 };
 
 export default config;

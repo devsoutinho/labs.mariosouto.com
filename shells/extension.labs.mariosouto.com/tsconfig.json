@@ -17,7 +17,7 @@
     "pages/**/*.ts",
     "pages/**/*.tsx",
     "src/**/*.ts",
-    "src/**/*.tsx",
+    "src/**/*.tsx"
   ],
   "exclude": [
     "node_modules"

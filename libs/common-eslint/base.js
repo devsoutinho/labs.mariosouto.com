@@ -24,6 +24,7 @@ module.exports = {
         "pages/**/*.tsx",
         "jest.config.{ts,js}",
         "webpack.config.{ts,js}",
+        "metro.config.{ts,js}",
         "next.config.{ts,js}",
       ],
       "rules": {
@@ -33,6 +34,7 @@ module.exports = {
     {
       "files": [
         "webpack.config.{ts,js}",
+        "metro.config.{ts,js}",
         "next.config.{ts,js}",
       ],
       "rules": {
@@ -40,5 +42,12 @@ module.exports = {
         "no-console": "off",
       },
     }
-  ]
+  ],
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+  ],
+  "globals": {
+    "globalThis": false,
+  },
 }

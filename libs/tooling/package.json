@@ -4,6 +4,7 @@
   "description": "A collection of tools for developers",
   "main": "index.js",
   "devDependencies": {
+    "tsconfig-paths-webpack-plugin": "4.0.0",
     "webpack-merge": "5.8.0",
     "copy-webpack-plugin": "^11.0.0",
     "html-webpack-plugin": "^5.5.0",

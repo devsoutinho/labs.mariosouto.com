@@ -1,23 +1,24 @@
 import React from "react";
 import { Box, Text } from "@devsoutinho/sknui";
-
 export function HomeScreen() {
-  return (
-    <Box
-      styleSheet={{
+  return React.createElement(
+    Box,
+    {
+      styleSheet: {
         flex: 1,
         backgroundColor: "#000",
         alignItems: "center",
         justifyContent: "center",
-      }}
-    >
-      <Text
-        styleSheet={{
+      },
+    },
+    React.createElement(
+      Text,
+      {
+        styleSheet: {
           color: "#fff",
-        }}
-      >
-        Olá pessoas!
-      </Text>
-    </Box>
+        },
+      },
+      "Ol\u00E1 pessoas!"
+    )
   );
 }

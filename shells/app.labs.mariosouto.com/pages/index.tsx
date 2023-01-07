@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from "expo-status-bar";
 import { HomeScreen } from "@src/screens/HomeScreen/HomeScreen";
 
 export default function App() {

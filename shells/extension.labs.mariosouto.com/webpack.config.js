@@ -17,6 +17,6 @@ module.exports = config({
       title: "React Extension",
       filename: "popup.html",
       chunks: [popup],
-    })
-  ]
+    }),
+  ],
 });
