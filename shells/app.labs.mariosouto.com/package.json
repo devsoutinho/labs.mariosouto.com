@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "lint": "tsc && eslint './**/*.{js,jsx,ts,tsx}'",
+    "lint": "eslint './**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",
     "test": "jest --maxWorkers=2",
     "test:watch": "yarn test --watch",

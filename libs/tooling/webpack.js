@@ -29,7 +29,10 @@ function common({ __dirname, entry, plugins }) {
       ]
     },
     resolve: {
-      extensions: [".tsx", ".ts", ".js"]
+      extensions: [".tsx", ".ts", ".js"],
+      plugins: [new TsconfigPathsPlugin({
+        configFile: path.resolve(__dirname, "tsconfig.json"),
+      })]
     },
     output: {
       filename: "[name].js",

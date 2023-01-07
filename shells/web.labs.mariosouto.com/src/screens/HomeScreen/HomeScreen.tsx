@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Text } from "@devsoutinho/sknui";
+import { message } from "@src/screens/HomeScreen/message";
 
 export function HomeScreen() {
   return (
@@ -16,7 +17,7 @@ export function HomeScreen() {
           color: "#fff",
         }}
       >
-        Olá pessoas!
+        {message}
       </Text>
     </Box>
   );

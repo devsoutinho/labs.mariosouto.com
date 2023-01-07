@@ -15,6 +15,9 @@ const config: Config.InitialOptions = {
       configFile: path.resolve(__dirname, '.babelrc'),
     }],
   },
+  moduleNameMapper: {
+    "^@src/(.*)": "<rootDir>/src/$1"
+  },
   snapshotSerializers: [],
   clearMocks: true,
 };
