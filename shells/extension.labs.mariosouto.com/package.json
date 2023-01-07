@@ -3,6 +3,10 @@
   "license": "MIT",
   "version": "1.0.0", 
   "scripts": {
+    "lint": "tsc && eslint './**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "yarn lint --fix",
+    "test": "jest --maxWorkers=2",
+    "test:watch": "yarn test --watch",
     "dev": "webpack --watch --progress --config webpack.config.js --mode=development",
     "build": "webpack --progress --config webpack.config.js --mode=production"
   }, 
