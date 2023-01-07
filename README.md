@@ -51,7 +51,7 @@ https://user-images.githubusercontent.com/13791385/211173060-bb8e72c2-7d8d-49d7-
 yarn dev:extension
 ```
 
-Follow the process in that vídeo:
+After run the command in terminal, follow that process (and check the steps in video):
 
 1. Open your chrome browser
 1. Access `chrome://extensions/`
