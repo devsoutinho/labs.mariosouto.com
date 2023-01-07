@@ -1,23 +1,27 @@
 {
   "compilerOptions": {
     "strict": true,
-    "jsx": "react",
-    "module": "es6",
-    "target": "es6",
-    "moduleResolution": "node",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
     "esModuleInterop": true,
+    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
       "@src/*": ["./src/*"]
     }
   },
   "include": [
-    "_extension/**/*.ts",
-    "_extension/**/*.tsx",
-    "pages/**/*.ts",
-    "pages/**/*.tsx",
-    "src/**/*.ts",
-    "src/**/*.tsx"
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules"
