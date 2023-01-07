@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { StyleSheet } from "../../theme/StyleSheet";
+import { StyleSheet } from "../../theme/StyleSheet/web";
 
 interface BoxProps {
   styleSheet?: StyleSheet;

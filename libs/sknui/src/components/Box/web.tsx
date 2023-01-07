@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from "../../theme/StyleSheet";
+import { StyleSheet } from "../../theme/StyleSheet/web";
 
 interface BoxProps {
   styleSheet?: StyleSheet;

@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import { Touchable } from "./web";
+import { Text } from "../Text/web";
+
+<Meta title="Components/Touchable" />
+
+# Touchable
+
+Touchable is the base component for Touchables
+
+<ArgsTable of={Touchable} />
+
+<Canvas>
+  <Story
+    name="Touchable Component - Default"
+    args={{
+      ...Touchable.defaultProps,
+      children: <Text>Touchable Text</Text>,
+    }}
+>
+    {(args) => {
+      return <Touchable {...args} />;
+    }}
+  </Story>
+</Canvas>

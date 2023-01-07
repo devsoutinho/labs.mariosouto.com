@@ -1,2 +1,3 @@
 export { Box } from "./Box/web";
 export { Text } from "./Text/web";
+export { Touchable } from "./Touchable/web";
