@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text } from "@devsoutinho/sknui";
+import { Box, Text } from "@devsoutinho/sknui/web";
 import { message } from "@src/screens/HomeScreen/message";
 
 export function HomeScreen() {
