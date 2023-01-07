@@ -42,6 +42,31 @@ https://user-images.githubusercontent.com/13791385/211173060-bb8e72c2-7d8d-49d7-
 
 > You can also create an alias in your computer to run that command everywhere
 
+### Chrome Extension
+
+
+- Open another terminal tab and run:
+
+```sh
+yarn dev:extension
+```
+
+Follow the process in that vídeo:
+
+1. Open your chrome browser
+1. Access `chrome://extensions/`
+1. Click in `Load Unpacked`
+1. Select the dist folder inside `shells/extension.labs.mariosouto.com/dist`
+1. Click in the Extensions puzzle block in top right corner
+1. Pin your extension
+1. Open your extension, the code there is relative to the `popup`
+
+
+https://user-images.githubusercontent.com/13791385/211173188-977d3f7e-20ff-4f10-96e1-1f480f7c3899.mp4
+
+
+
+
 ## How to test?
 
 - Open a terminal tab and run:
