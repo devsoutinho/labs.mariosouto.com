@@ -4,6 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "lint": "tsc && eslint './**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "yarn lint --fix",
+    "test": "jest --maxWorkers=2",
+    "test:watch": "yarn test --watch",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
@@ -12,10 +16,11 @@
     "next": "^13.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@devsoutinho/sknui": "*",
-    "@devsoutinho/tooling": "*"
+    "@devsoutinho/sknui": "*"
   },
   "devDependencies": {
+    "@devsoutinho/tooling": "*",
+    "@devsoutinho/common-test": "*",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
     "typescript": "4.9.4"

@@ -9,10 +9,16 @@
   "scripts": {
     "web": "yarn workspace web.labs.mariosouto.com",
     "dev:web": "yarn web dev",
+    "lint:web": "yarn web lint",
+    "test:web": "yarn web test",
     "app": "yarn workspace app.labs.mariosouto.com",
     "dev:app": "yarn app dev",
+    "lint:app": "yarn app lint",
+    "test:app": "yarn app test",
     "extension": "yarn workspace extension.labs.mariosouto.com",
     "dev:extension": "yarn extension dev",
-    "build:extension": "yarn extension build"
+    "build:extension": "yarn extension build",
+    "lint:extension": "yarn extension lint",
+    "test:extension": "yarn extension test"
   }
 }
