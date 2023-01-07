@@ -1,10 +1,6 @@
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Box, Text } from "@devsoutinho/sknui/native";
 
 export function StorybookComponentScreen(props: RootStackStorybookComponentScreenProps) {
-  
-  console.warn(props);
-
   return (
     <Box
       styleSheet={{
@@ -13,7 +9,7 @@ export function StorybookComponentScreen(props: RootStackStorybookComponentScree
       }}
     >
       <Text>
-        Box
+        {props.route.params.componentName}
       </Text>
     </Box>
   );
