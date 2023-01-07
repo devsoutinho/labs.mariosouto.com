@@ -1,0 +1,22 @@
+{
+  "name": "web.labs.mariosouto.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^13.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@devsoutinho/sknui": "*"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.18",
+    "@types/react": "18.0.26",
+    "typescript": "4.9.4"
+  }
+}

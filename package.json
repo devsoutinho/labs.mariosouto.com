@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "@devsoutinho/platform",
+  "license": "MIT",
+  "workspaces": [
+    "libs/*",
+    "shells/*"
+  ],
+  "scripts": {
+    "web": "yarn workspace web.labs.mariosouto.com",
+    "dev:web": "yarn web dev",
+    "app": "yarn workspace app.labs.mariosouto.com",
+    "dev:app": "yarn app dev"
+  }
+}
