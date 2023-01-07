@@ -22,7 +22,7 @@ yarn dev:web
 yarn dev:app
 ```
 
-> We are using expo, you can use your own device to see the reload without the need to have a simulator running.
+> We are using [Expo](https://expo.dev/home), you can use your own device to see the reload without the need to have a simulator running.
 
 ### CLI
 
@@ -37,6 +37,8 @@ yarn dev
 ```sh
 yarn dscli
 ```
+
+https://user-images.githubusercontent.com/13791385/211173060-bb8e72c2-7d8d-49d7-a5ad-0b344d6d3aa3.mp4
 
 > You can also create an alias in your computer to run that command everywhere
 
