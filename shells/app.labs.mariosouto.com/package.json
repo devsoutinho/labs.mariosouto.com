@@ -8,7 +8,7 @@
     "test": "jest --maxWorkers=2",
     "test:watch": "yarn test --watch",
     "dev": "expo start",
-    "playground": "expo start",
+    "playground": "PLAYGROUND=1 expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
