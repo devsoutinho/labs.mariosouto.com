@@ -9,8 +9,4 @@ log(chalk.hex("#f35627")("Welcome to the DS_CLI! \n\n"));
 
 registerWelcome(program);
 
-if (process.argv.length < 3) {
-  program.help();
-} else {
-  program.parse(process.argv);
-}
+process.argv.length < 3 ? program.help() : program.parse(process.argv);
