@@ -1,5 +1,5 @@
 {
-  "name": "@devsoutinho/tooling",
+  "name": "@devsoutinho/common-tooling",
   "version": "1.0.0",
   "description": "A collection of tools for developers",
   "main": "index.js",

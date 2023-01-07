@@ -22,7 +22,7 @@
   "devDependencies": {
     "shelljs": "0.8.5",
     "@types/inquirer": "9.0.3",
-    "@devsoutinho/tooling": "*",
+    "@devsoutinho/common-tooling": "*",
     "@devsoutinho/common-test": "*"
   }
 }

@@ -27,7 +27,7 @@
     "@types/react": "~18.0.24",
     "@types/react-native": "~0.70.6",
     "typescript": "4.9.4",
-    "@devsoutinho/tooling": "*",
+    "@devsoutinho/common-tooling": "*",
     "@devsoutinho/common-test": "*"
   },
   "private": true

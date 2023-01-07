@@ -1,5 +1,5 @@
 const path = require("path");
-const { HtmlPlugin, config } = require("@devsoutinho/tooling/webpack");
+const { HtmlPlugin, config } = require("@devsoutinho/common-tooling/webpack");
 
 const popup = "popup";
 const background = "background";

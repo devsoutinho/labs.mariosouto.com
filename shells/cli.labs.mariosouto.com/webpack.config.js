@@ -1,6 +1,6 @@
 const path = require("path");
 const shell = require("shelljs");
-const { config } = require("@devsoutinho/tooling/webpack");
+const { config } = require("@devsoutinho/common-tooling/webpack");
 
 class CLIPlugin {
   apply(compiler) {

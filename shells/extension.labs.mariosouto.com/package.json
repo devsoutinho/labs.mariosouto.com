@@ -14,7 +14,7 @@
     "@devsoutinho/sknui": "*"
   },
   "devDependencies": {
-    "@devsoutinho/tooling": "*",
+    "@devsoutinho/common-tooling": "*",
     "@devsoutinho/common-test": "*"
   }
 }
