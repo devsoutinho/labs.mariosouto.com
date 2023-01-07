@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "./infra/render";
-import Screen from "../src/screens/HomeScreen/HomeScreen";
+import Screen from "../pages";
 
 console.log("[Nu] Popup Script!");
 

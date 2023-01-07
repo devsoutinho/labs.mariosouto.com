@@ -3,7 +3,8 @@
   "license": "MIT",
   "version": "1.0.0", 
   "scripts": {
-    "dev": "webpack --watch --progress --config webpack.config.js"
+    "dev": "webpack --watch --progress --config webpack.config.js --mode=development",
+    "build": "webpack --progress --config webpack.config.js --mode=production"
   }, 
   "dependencies": {
     "@devsoutinho/sknui": "*"

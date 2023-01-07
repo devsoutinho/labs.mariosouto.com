@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Text } from "@devsoutinho/sknui";
 
-export default function App() {
+export function HomeScreen() {
   return (
     <Box styleSheet={{
       flex: 1,

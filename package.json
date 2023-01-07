@@ -12,6 +12,7 @@
     "app": "yarn workspace app.labs.mariosouto.com",
     "dev:app": "yarn app dev",
     "extension": "yarn workspace extension.labs.mariosouto.com",
-    "dev:extension": "yarn extension dev"
+    "dev:extension": "yarn extension dev",
+    "build:extension": "yarn extension build"
   }
 }

@@ -9,6 +9,8 @@
   "include": [
     "_extension/**/*.ts",
     "_extension/**/*.tsx",
+    "pages/**/*.ts",
+    "pages/**/*.tsx",
     "src/**/*.ts",
     "src/**/*.tsx",
   ],

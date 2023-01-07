@@ -5,8 +5,8 @@ const popup = "popup";
 const background = "background";
 const content = "content";
 
-
 module.exports = config({
+  __dirname,
   entry: {
     [popup]: path.resolve("_extension", "popup.tsx"),
     [content]: path.resolve("_extension", "content.tsx"),
