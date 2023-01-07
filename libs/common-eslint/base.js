@@ -21,7 +21,7 @@ module.exports = {
   "overrides": [
     {
       "files": [
-        "pages/**/*.tsx",
+        "pages/**/*.{tsx,ts}",
         "jest.config.{ts,js}",
         "webpack.config.{ts,js}",
         "metro.config.{ts,js}",

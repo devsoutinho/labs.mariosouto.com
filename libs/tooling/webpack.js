@@ -10,8 +10,9 @@ function common({ __dirname, entry, plugins }) {
     devtool: 'cheap-module-source-map',
     entry,
     resolve: {
+      root: [path.resolve(__dirname, '.')],
       alias: {
-        '@src': path.resolve(__dirname, 'src'),
+        '@src': path.resolve(__dirname, 'src/'),
       },
     },
     plugins: [
