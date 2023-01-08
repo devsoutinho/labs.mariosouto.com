@@ -11,7 +11,9 @@ export function HomeScreen() {
         justifyContent: "center",
       }}
     >
-      <Form>
+      <Form onSubmit={() => {
+        window.location.href = "/dashboard";
+      }}>
         <InputText label="Email"  />
 
         <Button
