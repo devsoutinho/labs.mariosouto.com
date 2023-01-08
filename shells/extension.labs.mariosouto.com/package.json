@@ -11,10 +11,13 @@
     "build": "webpack --progress --config webpack.config.js --mode=production"
   }, 
   "dependencies": {
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
     "@devsoutinho/sknui": "*"
   },
   "devDependencies": {
     "@devsoutinho/common-tooling": "*",
-    "@devsoutinho/common-test": "*"
+    "@devsoutinho/common-test": "*",
+    "@devsoutinho/common-eslint": "*"
   }
 }
