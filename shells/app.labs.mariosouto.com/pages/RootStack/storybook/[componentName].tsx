@@ -8,7 +8,7 @@ function reducer(state: any, action: any) {
   console.warn("state", state.disabled);
 
   // TODO: Solve Keys first and types latter
-  if(action.type === "boolean") {
+  if (action.type === "boolean") {
     return {
       ...state,
       [action.key]: !state[action.key],
@@ -39,29 +39,33 @@ export function StorybookComponentScreen(props: RootStackStorybookComponentScree
     }
   });
 
-  const controlComponents = entries.map(({ name, type }) => (
-    <Touchable
-      onPress={() => {
-        dispatch({ key: name, type: type })
-      }}
-      styleSheet={{
-        marginBottom: 15,
-        flexDirection: "row",
-        justifyContent: "space-between",
-      }}
-    >
-      <Box>
-        <Text key={name}>
-          Name: {name}
-        </Text>
-      </Box>
-      <Box>
-        <Text key={name}>
-          Type: {type}
-        </Text>
-      </Box>
-    </Touchable>
-  ));
+  const controlComponents = entries.map(({ name, type }) => {
+    if (name === "children") return null;
+
+    return (
+      <Touchable
+        onPress={() => {
+          dispatch({ key: name, type: type })
+        }}
+        styleSheet={{
+          marginBottom: 15,
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <Box>
+          <Text key={name}>
+            Name: {name}
+          </Text>
+        </Box>
+        <Box>
+          <Text key={name}>
+            Type: {type}
+          </Text>
+        </Box>
+      </Touchable>
+    )
+  });
 
   return (
     <Box

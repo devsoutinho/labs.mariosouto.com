@@ -12,4 +12,10 @@ export const controls = {
     },
     disabled: false,
   },
+  propsOverrides: {
+    disabled: {
+      type: "select",
+      options: [true, false],
+    }
+  }
 };
