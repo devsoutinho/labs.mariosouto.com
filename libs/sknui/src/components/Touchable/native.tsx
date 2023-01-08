@@ -4,14 +4,14 @@ import { StyleSheet } from "../../theme/native";
 
 interface TouchableProps {
   children: React.ReactNode;
-  onPress?: () => void;
+  onTap?: () => void;
   disabled?: boolean;
   styleSheet?: StyleSheet;
 }
-export function Touchable({ children, onPress, disabled, styleSheet }: TouchableProps) {
+export function Touchable({ children, onTap, disabled, styleSheet }: TouchableProps) {
   return (
     <TouchableOpacity
-      onPress={onPress}
+      onTap={onTap}
       style={{
         backgroundColor: disabled ? "red" : "transparent",
         ...styleSheet,

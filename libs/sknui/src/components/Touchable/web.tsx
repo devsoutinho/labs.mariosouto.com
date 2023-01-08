@@ -3,17 +3,17 @@ import { StyleSheet } from "../../theme/web";
 
 interface TouchableProps {
   children: React.ReactNode;
-  onPress?: React.MouseEventHandler<HTMLButtonElement>;
+  onTap?: React.MouseEventHandler<HTMLButtonElement>;
   styleSheet?: StyleSheet;
 }
-export function Touchable({ styleSheet, children, onPress }: TouchableProps) {
+export function Touchable({ styleSheet, children, onTap }: TouchableProps) {
   const Tag = "button";
   return (
     <Tag style={{
       background: "transparent",
       border: "none",
       ...styleSheet,
-    }} onClick={onPress}>
+    }} onClick={onTap}>
       {children}
     </Tag>
   )

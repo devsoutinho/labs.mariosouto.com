@@ -25,7 +25,7 @@ export function HomeScreen({ navigation }: RootStackHomeScreenProps) {
           {message}
         </Text>
         <TouchableOpacity
-          onPress={() => navigation.navigate("storybook")}
+          onTap={() => navigation.navigate("storybook")}
         >
           <Text
             styleSheet={{

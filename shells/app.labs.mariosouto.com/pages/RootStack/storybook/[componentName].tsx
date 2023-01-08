@@ -44,7 +44,7 @@ export function StorybookComponentScreen(props: RootStackStorybookComponentScree
 
     return (
       <Touchable
-        onPress={() => {
+        onTap={() => {
           dispatch({ key: name, type: type })
         }}
         styleSheet={{

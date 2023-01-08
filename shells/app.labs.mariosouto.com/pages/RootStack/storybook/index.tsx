@@ -25,7 +25,7 @@ export function StorybookScreen({ navigation }: RootStackStorybookScreenProps) {
               backgroundColor: "#eee",
               marginBottom: 1,
             }}
-            onPress={() => {
+            onTap={() => {
               navigation.navigate("storybook/[componentName]", {
                 componentName,
               });

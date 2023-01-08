@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import { Icon } from "./web";
+
+<Meta title="Components/Icon" />
+
+# Icon
+
+Icon is ...
+
+<ArgsTable of={Icon} />
+
+<Canvas>
+  <Story
+    name="Icon Component - Default"
+    args={{
+      ...Icon.defaultProps,
+      styleSheet: {
+          backgroundColor: "orange",
+          padding: "10px",
+          width: "50px",
+          height: "50px",
+      }
+    }}
+>
+    {(args) => {
+      return <Icon {...args} />;
+    }}
+  </Story>
+</Canvas>
