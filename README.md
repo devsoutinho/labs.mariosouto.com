@@ -2,7 +2,7 @@
 
 ## What is this?
 
-...
+It's my company open sourced.
 
 ## How to use?
 
@@ -64,9 +64,6 @@ After run the command in terminal, follow that process (and check the steps in v
 
 https://user-images.githubusercontent.com/13791385/211173188-977d3f7e-20ff-4f10-96e1-1f480f7c3899.mp4
 
-
-
-
 ## How to test?
 
 - Open a terminal tab and run:
@@ -82,3 +79,22 @@ yarn test
 ```sh
 yarn lint
 ```
+
+## How to create new components? 
+
+- Open a terminal tab and run:
+
+```sh
+yarn playground:web
+```
+
+> To create a new story inside storybook, just create a new file with `filename.stories.mdx` following the other examples
+
+```sh
+yarn playground:app
+```
+
+> To create app stories, just import the `native.stories.tsx` file inside `libs/sknui/storybook/native.ts`
+
+
+![image](https://user-images.githubusercontent.com/13791385/211199716-3837f0e9-41dc-4619-9677-3921b6728cf4.png)
