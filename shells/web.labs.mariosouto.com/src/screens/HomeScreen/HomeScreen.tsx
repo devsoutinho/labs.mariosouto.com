@@ -25,7 +25,7 @@ export function HomeScreen() {
         <InputText label="Email" />
 
         <Button type="submit" suffix={<Icon name="arrow_left" />}>
-          Entrar
+          Entrar!
         </Button>
         <Box
           styleSheet={{
