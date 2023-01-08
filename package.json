@@ -2,10 +2,16 @@
   "private": true,
   "name": "@devsoutinho/platform",
   "license": "MIT",
-  "workspaces": [
-    "libs/*",
-    "shells/*"
-  ],
+  "workspaces": {
+    "nohoist": [
+      "**/@devsoutinho/common-eslint/**",
+      "**/@devsoutinho/common-eslint/**/*"
+    ],
+    "packages": [
+      "libs/*",
+      "shells/*"
+    ]
+  },
   "scripts": {
     "test": "yarn test:web && yarn test:app && yarn test:extension && yarn test:cli",
     "lint": "yarn lint:web && yarn lint:app && yarn lint:extension && yarn lint:cli",
