@@ -6,7 +6,9 @@ const render = customRender();
 
 describe("<HomeScreen />", () => {
   it("renders as expected", () => {
-    const { toJSON } = render(<HomeScreen />);
+    const { toJSON } = render(
+      <HomeScreen navigation={{} as any} route={{} as any} key={""} />
+    );
 
     expect(toJSON()).toMatchSnapshot();
   });

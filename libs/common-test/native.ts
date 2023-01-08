@@ -5,7 +5,7 @@ const config: Config.InitialOptions = {
   testEnvironment: "node",
   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   transformIgnorePatterns: [
-    "node_modules/(?!axios)",
+    "node_modules/(?!expo-status-bar)",
   ],
   clearMocks: true,
 };
