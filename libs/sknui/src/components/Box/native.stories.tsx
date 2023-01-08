@@ -11,5 +11,5 @@ export const controls = {
       backgroundColor: "#eee",
       padding: 10,
     },
-  }
+  },
 };

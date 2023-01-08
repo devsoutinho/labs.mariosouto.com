@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { StyleSheet } from "../../theme/StyleSheet/web";
 import { Touchable } from "../web";
 
@@ -9,19 +9,29 @@ interface LinkProps {
   suffix?: React.ReactNode;
   href: string;
 }
-export function Link({ styleSheet, children, href, prefix, suffix, ...props }: LinkProps) {
+export function Link({
+  styleSheet,
+  children,
+  href,
+  prefix,
+  suffix,
+  ...props
+}: LinkProps) {
   const PrefixComponent = prefix;
   const SuffixComponent = suffix;
 
-  return <Touchable
-    href={href}
-    styleSheet={{
-      display: "flex",
-      ...styleSheet,
-    }}
-    {...props}>
-    {PrefixComponent}
-    {children}
-    {SuffixComponent}
-  </Touchable>;
+  return (
+    <Touchable
+      href={href}
+      styleSheet={{
+        display: "flex",
+        ...styleSheet,
+      }}
+      {...props}
+    >
+      {PrefixComponent}
+      {children}
+      {SuffixComponent}
+    </Touchable>
+  );
 }

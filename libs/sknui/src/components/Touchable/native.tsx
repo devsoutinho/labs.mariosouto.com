@@ -1,5 +1,5 @@
-import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import React from "react";
+import { TouchableOpacity } from "react-native";
 import { StyleSheet } from "../../theme/native";
 
 interface TouchableProps {
@@ -8,7 +8,12 @@ interface TouchableProps {
   disabled?: boolean;
   styleSheet?: StyleSheet;
 }
-export function Touchable({ children, onTap, disabled, styleSheet }: TouchableProps) {
+export function Touchable({
+  children,
+  onTap,
+  disabled,
+  styleSheet,
+}: TouchableProps) {
   return (
     <TouchableOpacity
       onPress={onTap}
@@ -19,7 +24,7 @@ export function Touchable({ children, onTap, disabled, styleSheet }: TouchablePr
     >
       {children}
     </TouchableOpacity>
-  )
+  );
 }
 
 Touchable.defaultProps = {};

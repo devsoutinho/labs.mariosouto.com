@@ -17,6 +17,6 @@ export const controls = {
     disabled: {
       type: "select",
       options: [true, false],
-    }
-  }
+    },
+  },
 };

@@ -7,7 +7,11 @@ const render = customRender();
 
 describe("<Box />", () => {
   it("renders as expected", () => {
-    const { container } = render(<Box><Text>Hello</Text></Box>);
+    const { container } = render(
+      <Box>
+        <Text>Hello</Text>
+      </Box>
+    );
 
     expect(container).toMatchSnapshot();
   });

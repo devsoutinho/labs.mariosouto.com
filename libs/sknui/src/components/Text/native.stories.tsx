@@ -8,5 +8,5 @@ export const controls = {
     styleSheet: {
       fontSize: 50,
     },
-  }
+  },
 };
