@@ -23,6 +23,8 @@ module.exports = {
       "files": [
         "pages/**/*.{tsx,ts}",
         "jest.config.{ts,js}",
+        "jest.native.config.ts",
+        "jest.web.config.ts",
         "webpack.config.{ts,js}",
         "metro.config.{ts,js}",
         "next.config.{ts,js}",

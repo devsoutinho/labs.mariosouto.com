@@ -39,6 +39,7 @@
     "test:cli": "yarn cli test",
     "playground:web": "yarn workspace @devsoutinho/sknui dev",
     "playground:app": "yarn app playground",
+    "ui": "yarn workspace @devsoutinho/sknui",
     "dscli": "dscli",
     "postinstall": "cd ./shells/cli.labs.mariosouto.com && yarn link && cd ../../"
   }

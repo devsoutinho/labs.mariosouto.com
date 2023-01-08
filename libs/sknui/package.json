@@ -6,8 +6,9 @@
   "scripts": {
     "lint": "eslint './**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",
-    "test": "jest --maxWorkers=2",
-    "test:watch": "yarn test --watch",
+    "test:web": "UI_ENV=web jest --maxWorkers=2",
+    "test:native": "UI_ENV=native jest --maxWorkers=2",
+    "test": "yarn test:web && yarn test:native",
     "dev": "yarn storybook",
     "build": "yarn build-storybook",
     "start": "yarn storybook",

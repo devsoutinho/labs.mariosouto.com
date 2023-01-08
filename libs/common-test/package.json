@@ -12,6 +12,7 @@
     "base.ts"
   ],
   "devDependencies": {
+    "@babel/plugin-transform-flow-strip-types": "7.19.0",
     "react-native": "0.70.5",
     "jest-expo": "47.0.1",
     "@testing-library/jest-native": "5.4.1",
