@@ -5,7 +5,9 @@
   "workspaces": {
     "nohoist": [
       "**/@devsoutinho/common-eslint",
-      "**/@devsoutinho/common-eslint/**"
+      "**/@devsoutinho/common-eslint/**",
+      "**/@devsoutinho/common-test",
+      "**/@devsoutinho/common-test/**"
     ],
     "packages": [
       "libs/*",
@@ -13,8 +15,8 @@
     ]
   },
   "scripts": {
-    "test": "yarn test:web && yarn test:app && yarn test:extension && yarn test:cli",
-    "lint": "yarn lint:web && yarn lint:app && yarn lint:extension && yarn lint:cli",
+    "test": "yarn workspaces run test",
+    "lint": "yarn workspaces run lint",
     "web": "yarn workspace web.labs.mariosouto.com",
     "dev:web": "yarn web dev",
     "lint:web": "yarn web lint",

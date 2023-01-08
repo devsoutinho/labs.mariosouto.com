@@ -1,34 +1,32 @@
 module.exports = {
-  "extra": {
+  extra: {
     playground: process.env.PLAYGROUND,
   },
-  "name": "app.labs.mariosouto.com",
-  "slug": "app.labs.mariosouto.com",
-  "version": "1.0.0",
-  "orientation": "portrait",
-  "icon": "./assets/icon.png",
-  "userInterfaceStyle": "light",
-  "splash": {
-    "image": "./assets/splash.png",
-    "resizeMode": "contain",
-    "backgroundColor": "#ffffff"
+  name: "app.labs.mariosouto.com",
+  slug: "app.labs.mariosouto.com",
+  version: "1.0.0",
+  orientation: "portrait",
+  icon: "./assets/icon.png",
+  userInterfaceStyle: "light",
+  splash: {
+    image: "./assets/splash.png",
+    resizeMode: "contain",
+    backgroundColor: "#ffffff",
   },
-  "updates": {
-    "fallbackToCacheTimeout": 0
+  updates: {
+    fallbackToCacheTimeout: 0,
   },
-  "assetBundlePatterns": [
-    "**/*"
-  ],
-  "ios": {
-    "supportsTablet": true
+  assetBundlePatterns: ["**/*"],
+  ios: {
+    supportsTablet: true,
   },
-  "android": {
-    "adaptiveIcon": {
-      "foregroundImage": "./assets/adaptive-icon.png",
-      "backgroundColor": "#FFFFFF"
-    }
+  android: {
+    adaptiveIcon: {
+      foregroundImage: "./assets/adaptive-icon.png",
+      backgroundColor: "#FFFFFF",
+    },
   },
-  "web": {
-    "favicon": "./assets/favicon.png"
-  }
-}
+  web: {
+    favicon: "./assets/favicon.png",
+  },
+};

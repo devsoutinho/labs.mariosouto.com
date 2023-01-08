@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "main": "base.ts",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo 'Not implemented'",
+    "lint": "echo 'Not implemented'"
+  },
   "files": [
     "base.ts"
   ],

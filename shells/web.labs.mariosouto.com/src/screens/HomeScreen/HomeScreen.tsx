@@ -1,6 +1,12 @@
 import React from "react";
-import { Box, Text, Form, InputText, Button, Icon } from "@devsoutinho/sknui/web";
-import { message } from "@src/screens/HomeScreen/message";
+import {
+  Box,
+  Text,
+  Form,
+  InputText,
+  Button,
+  Icon,
+} from "@devsoutinho/sknui/web";
 
 export function HomeScreen() {
   return (
@@ -11,15 +17,14 @@ export function HomeScreen() {
         justifyContent: "center",
       }}
     >
-      <Form onSubmit={() => {
-        window.location.href = "/dashboard";
-      }}>
-        <InputText label="Email"  />
+      <Form
+        onSubmit={() => {
+          window.location.href = "/dashboard";
+        }}
+      >
+        <InputText label="Email" />
 
-        <Button
-          type="submit"
-          suffix={<Icon name="arrow_left" />}
-        >
+        <Button type="submit" suffix={<Icon name="arrow_left" />}>
           Entrar
         </Button>
         <Box
@@ -27,13 +32,9 @@ export function HomeScreen() {
             marginTop: "16px",
           }}
         >
-          <Text>
-            Ou faça login com
-          </Text>
+          <Text>Ou faça login com</Text>
           <Box>
-            <Button>
-              Github
-            </Button>
+            <Button>Github</Button>
           </Box>
         </Box>
       </Form>

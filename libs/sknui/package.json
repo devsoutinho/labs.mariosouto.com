@@ -1,14 +1,18 @@
 {
   "name": "@devsoutinho/sknui",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
+    "lint": "tsc && eslint './**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "yarn lint --fix",
+    "test": "jest --maxWorkers=2",
+    "test:watch": "yarn test --watch",
     "dev": "yarn storybook",
     "build": "yarn build-storybook",
-    "start": "yarn storybook"
+    "start": "yarn storybook",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
     "next": "^13.1.1",

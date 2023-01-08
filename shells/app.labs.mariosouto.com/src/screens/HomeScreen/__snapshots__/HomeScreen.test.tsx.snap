@@ -3,7 +3,7 @@
 exports[`<HomeScreen /> renders as expected 1`] = `
 <View
   style={
-    {
+    Object {
       "alignItems": "center",
       "backgroundColor": "#000",
       "flex": 1,
@@ -13,12 +13,40 @@ exports[`<HomeScreen /> renders as expected 1`] = `
 >
   <Text
     style={
-      {
+      Object {
         "color": "#fff",
       }
     }
   >
     Olá pessoas!
   </Text>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Go to Storybook
+    </Text>
+  </View>
 </View>
 `;

@@ -31,11 +31,14 @@ export function StorybookScreen({ navigation }: RootStackStorybookScreenProps) {
               });
             }}
           >
-            <Text key={componentName}
+            <Text
+              key={componentName}
               styleSheet={{
                 fontSize: 20,
               }}
-            >{componentName}</Text>
+            >
+              {componentName}
+            </Text>
           </Touchable>
         ))}
       </Box>

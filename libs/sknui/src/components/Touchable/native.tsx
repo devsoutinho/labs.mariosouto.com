@@ -11,7 +11,7 @@ interface TouchableProps {
 export function Touchable({ children, onTap, disabled, styleSheet }: TouchableProps) {
   return (
     <TouchableOpacity
-      onTap={onTap}
+      onPress={onTap}
       style={{
         backgroundColor: disabled ? "red" : "transparent",
         ...styleSheet,

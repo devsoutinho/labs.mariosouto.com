@@ -4,9 +4,9 @@ const { config } = require("@devsoutinho/common-tooling/webpack");
 
 class CLIPlugin {
   apply(compiler) {
-    compiler.hooks.done.tap("CLI Plugin", (stats) => {
+    compiler.hooks.done.tap("CLI Plugin", () => {
       shell
-        .echo('#!/usr/bin/env node\n')
+        .echo("#!/usr/bin/env node\n")
         .cat(`${__dirname}/dist/index.js`)
         .to(`${__dirname}/.bin`);
 
@@ -21,7 +21,5 @@ module.exports = config({
   entry: {
     index: path.resolve("index.ts"),
   },
-  plugins: [
-    new CLIPlugin(),
-  ],
+  plugins: [new CLIPlugin()],
 });

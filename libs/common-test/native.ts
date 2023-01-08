@@ -1,7 +1,7 @@
 import type { Config } from "@jest/types";
 
 const config: Config.InitialOptions = {
-  preset: 'react-native',
+  preset: 'jest-expo',
   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   clearMocks: true,
 };

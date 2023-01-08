@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "base.js",
   "license": "MIT",
+  "scripts": {
+    "test": "echo 'Not implemented'",
+    "lint": "echo 'Not implemented'"
+  },
   "files": [
     "base.js"
   ],

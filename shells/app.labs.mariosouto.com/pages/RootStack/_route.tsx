@@ -1,4 +1,4 @@
-import Constants from 'expo-constants';
+import Constants from "expo-constants";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { HomeScreen } from "@src/screens/HomeScreen/HomeScreen";
 import { StorybookScreen } from "./storybook";
@@ -15,18 +15,20 @@ export function RootStackNavigator() {
       <RootStack.Screen
         name="home"
         component={HomeScreen}
-        options={{ title: 'Route Bar Title' }}
+        options={{ title: "Route Bar Title" }}
       />
       <RootStack.Screen
         name="storybook"
         component={StorybookScreen}
-        options={{ title: 'Storybook' }}
+        options={{ title: "Storybook" }}
       />
       <RootStack.Screen
         name="storybook/[componentName]"
         component={StorybookComponentScreen}
-        options={({ route }) => ({ title: `Storybook Component - ${route.params.componentName}` })}
+        options={({ route }) => ({
+          title: `Storybook Component - ${route.params.componentName}`,
+        })}
       />
     </RootStack.Navigator>
-  )
+  );
 }

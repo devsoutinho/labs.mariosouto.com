@@ -4,9 +4,7 @@ export function DashboardScreen() {
   return (
     <Box>
       <Text tag="h1">Welcome to DashboardScreen!</Text>
-      <Link href="/">
-        Voltar ao login
-      </Link>
+      <Link href="/">Voltar ao login</Link>
     </Box>
   );
 }

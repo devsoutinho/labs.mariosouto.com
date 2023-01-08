@@ -3,7 +3,6 @@ import { Box, Text, Touchable } from "@devsoutinho/sknui/native";
 import { message } from "@src/screens/HomeScreen/message";
 import { StatusBar } from "expo-status-bar";
 
-
 export function HomeScreen({ navigation }: RootStackHomeScreenProps) {
   return (
     <>
@@ -23,9 +22,7 @@ export function HomeScreen({ navigation }: RootStackHomeScreenProps) {
         >
           {message}
         </Text>
-        <Touchable
-          onTap={() => navigation.navigate("storybook")}
-        >
+        <Touchable onTap={() => navigation.navigate("storybook")}>
           <Text
             styleSheet={{
               color: "#fff",
