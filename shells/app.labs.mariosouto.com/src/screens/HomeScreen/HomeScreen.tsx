@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Text } from "@devsoutinho/sknui/native";
+import { Box, Text, Touchable } from "@devsoutinho/sknui/native";
 import { message } from "@src/screens/HomeScreen/message";
 import { StatusBar } from "expo-status-bar";
-import { TouchableOpacity } from "react-native";
 
 
 export function HomeScreen({ navigation }: RootStackHomeScreenProps) {
@@ -24,7 +23,7 @@ export function HomeScreen({ navigation }: RootStackHomeScreenProps) {
         >
           {message}
         </Text>
-        <TouchableOpacity
+        <Touchable
           onTap={() => navigation.navigate("storybook")}
         >
           <Text
@@ -34,7 +33,7 @@ export function HomeScreen({ navigation }: RootStackHomeScreenProps) {
           >
             Go to Storybook
           </Text>
-        </TouchableOpacity>
+        </Touchable>
       </Box>
     </>
   );
