@@ -5,9 +5,11 @@ export const Component = Touchable;
 
 export const controls = {
   props: {
+    ...Component.defaultProps,
     children: <Text>Olá pessoas</Text>,
     styleSheet: {
       padding: 10,
     },
-  }
+    disabled: false,
+  },
 };

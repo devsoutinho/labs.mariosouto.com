@@ -17,3 +17,5 @@ export function Touchable({ children, onPress, styleSheet }: TouchableProps) {
     </TouchableOpacity>
   )
 }
+
+Touchable.defaultProps = {};
