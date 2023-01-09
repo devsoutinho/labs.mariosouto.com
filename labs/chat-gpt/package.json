@@ -1,8 +1,9 @@
 {
-  "name": "web.labs.mariosouto.com",
+  "name": "@devsoutinho-labs/chat-gpt",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Chatbot GPT-3",
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
     "lint": "tsc && eslint './**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",
@@ -13,11 +14,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "openai": "3.1.0",
     "next": "^13.1.1",
     "react": "18.1.0",
-    "react-dom": "18.1.0",
-    "@devsoutinho-labs/chat-gpt": "*",
-    "@devsoutinho/sknui": "*"
+    "react-dom": "18.1.0"
   },
   "devDependencies": {
     "@devsoutinho/common-tooling": "*",
