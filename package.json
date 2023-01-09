@@ -27,6 +27,7 @@
     
     "app": "yarn workspace app.labs.mariosouto.com",
     "dev:app": "yarn app dev",
+    "dev:app:remote": "yarn app dev --tunnel",
     "lint:app": "yarn app lint",
     "test:app": "yarn app test",
     "build:app": "yarn app build",
@@ -54,5 +55,8 @@
 
     "dscli": "dscli",
     "postinstall": "cd ./shells/cli.labs.mariosouto.com && yarn link && cd ../../"
+  },
+  "engines": {
+    "node" : ">=16.0.0"
   }
 }
