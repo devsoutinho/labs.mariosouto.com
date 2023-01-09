@@ -3,7 +3,7 @@
 exports[`<Box /> renders as expected 1`] = `
 <div>
   <div
-    style="display: flex; flex-direction: column;"
+    class="css-0"
   >
     <p>
       Hello

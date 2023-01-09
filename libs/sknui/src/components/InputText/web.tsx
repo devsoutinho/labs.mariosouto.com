@@ -15,6 +15,7 @@ export function InputText({ label, styleSheet }: InputTextProps) {
           {
             display: "flex",
             ...styleSheet,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
           } as any
         }
       />

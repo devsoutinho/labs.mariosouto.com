@@ -6,15 +6,25 @@ import {
   InputText,
   Button,
   Icon,
+  useTheme,
 } from "@devsoutinho/sknui/web";
 
 export function HomeScreen() {
+  const { theme } = useTheme();
+
   return (
     <Box
       styleSheet={{
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
+        backgroundColor: {
+          xs: theme.colors.primary.x050,
+          sm: theme.colors.primary.x100,
+          md: theme.colors.primary.x200,
+          lg: theme.colors.primary.x300,
+          xl: theme.colors.primary.x400,
+        },
       }}
     >
       <Form

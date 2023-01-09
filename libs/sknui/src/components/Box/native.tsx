@@ -7,5 +7,6 @@ interface BoxProps {
   children: React.ReactNode;
 }
 export function Box({ styleSheet, children }: BoxProps) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return <View style={styleSheet as any}>{children}</View>;
 }

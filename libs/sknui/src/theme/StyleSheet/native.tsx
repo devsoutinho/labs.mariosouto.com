@@ -1,3 +1,4 @@
+import { StyleProp, ViewStyle } from "react-native";
 import {
   AlignItems,
   Color,
@@ -9,7 +10,9 @@ import {
   Width,
 } from "./common";
 
-export type StyleSheet = {
+type StylePropsKeys = Partial<StyleProp<ViewStyle>>;
+
+export type StyleSheet = StylePropsKeys & {
   display?: Display;
   width?: Width;
   color?: Color;

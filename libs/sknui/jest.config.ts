@@ -1,4 +1,5 @@
 import path from "path";
+import base from "@devsoutinho/common-test/base";
 import type { Config } from "@jest/types";
 const isNative = process.env.UI_PLATFORM === "native";
 
@@ -12,6 +13,7 @@ const native: Config.InitialOptions = {
 };
 
 const web: Config.InitialOptions = {
+  ...base,
   testEnvironment: "jsdom",
   verbose: true,
   testRegex: "(/__tests__/.*|(\\.|/)(web.test|web.spec))\\.[jt]sx?$",

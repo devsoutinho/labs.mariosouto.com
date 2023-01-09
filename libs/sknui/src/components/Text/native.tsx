@@ -7,5 +7,6 @@ interface TextProps {
   children: React.ReactNode;
 }
 export function Text({ styleSheet, children }: TextProps) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return <RNText style={styleSheet as any}>{children}</RNText>;
 }
