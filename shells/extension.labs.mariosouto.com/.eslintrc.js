@@ -1,1 +1,1 @@
-module.exports = require("@devsoutinho/common-eslint/base");
+module.exports = require("@devsoutinho/common-lint/base");

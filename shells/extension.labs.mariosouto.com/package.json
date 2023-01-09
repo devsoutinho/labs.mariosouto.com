@@ -18,6 +18,6 @@
   "devDependencies": {
     "@devsoutinho/common-tooling": "*",
     "@devsoutinho/common-test": "*",
-    "@devsoutinho/common-eslint": "*"
+    "@devsoutinho/common-lint": "*"
   }
 }
