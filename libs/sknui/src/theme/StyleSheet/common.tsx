@@ -2,7 +2,7 @@ import { Breakpoints } from "../default/theme";
 
 export type ResponsiveValue<Type> = Partial<Record<Breakpoints, Type>> | Type;
 
-export type Width = string;
+export type NumericValue = string | number;
 export type Display = "flex" | "inline-flex" | "none";
 export type Color = string;
 export type BackgroundColor = Color;
@@ -25,7 +25,10 @@ export type Flex = string | number;
 
 export type StyleSheetCommon = {
   display?: ResponsiveValue<Display>;
-  width?: ResponsiveValue<Width>;
+  width?: ResponsiveValue<NumericValue>;
+  height?: ResponsiveValue<NumericValue>;
+  margin?: ResponsiveValue<NumericValue>;
+  padding?: ResponsiveValue<NumericValue>;
   backgroundColor?: ResponsiveValue<BackgroundColor>;
   color?: ResponsiveValue<Color>;
   flex?: ResponsiveValue<Flex>;

@@ -15,10 +15,13 @@ export function BoxPrimal({ tag, styleSheet, children, ...props }: BoxProps) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Comp = ChakraBox as any;
 
-  const overflow = "hidden";
+  const defaultStyles = {
+    display: "flex",
+    overflow: "hidden",
+  };
 
   return (
-    <Comp as={Tag} overflow={overflow} {...styleSheet} {...props}>
+    <Comp as={Tag} {...defaultStyles} {...styleSheet} {...props}>
       {children}
     </Comp>
   );

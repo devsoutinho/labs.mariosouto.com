@@ -1,18 +1,31 @@
 import React from "react";
 import { StyleSheet } from "../../theme/StyleSheet/native";
 
+function parseValue(receivedValue: string | number) {
+  if (typeof receivedValue === "number") {
+    return receivedValue;
+  }
+
+  const endsWithPX = receivedValue.endsWith("px");
+  if (endsWithPX) {
+    return parseInt(receivedValue.replace("px", ""), 10);
+  }
+
+  return receivedValue;
+}
+
 function reduceStyleSheet(styleSheet?: StyleSheet) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return Object.entries(styleSheet || {}).reduce<any>((acc, [key, value]) => {
     if (typeof value === "object") {
       return {
         ...acc,
-        [key]: value.xs,
+        [key]: parseValue(value.xs),
       };
     }
     return {
       ...acc,
-      [key]: value,
+      [key]: parseValue(value),
     };
   }, {});
 }
