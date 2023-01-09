@@ -2,6 +2,8 @@ import React from "react";
 import {
   Box,
   Text,
+  useTheme,
+  ScreenContainer,
   Form,
   InputText,
   Button,
@@ -9,35 +11,40 @@ import {
 } from "@devsoutinho/sknui/web";
 
 export function HomeScreen() {
+  const { theme } = useTheme();
+
   return (
-    <Box
-      styleSheet={{
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Form
-        onSubmit={() => {
-          window.location.href = "/dashboard";
+    <ScreenContainer>
+      <Box
+        styleSheet={{
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: theme.colors.primary.x300,
         }}
       >
-        <InputText label="Email" />
-
-        <Button type="submit" suffix={<Icon name="arrow_left" />}>
-          Entrar agora!
-        </Button>
-        <Box
-          styleSheet={{
-            marginTop: "16px",
+        <Form
+          onSubmit={() => {
+            window.location.href = "/dashboard";
           }}
         >
-          <Text>Ou faça login com</Text>
-          <Box>
-            <Button>Github</Button>
+          <InputText label="Email" />
+
+          <Button type="submit" suffix={<Icon name="arrow_left" />}>
+            Entrar agora!
+          </Button>
+          <Box
+            styleSheet={{
+              marginTop: "16px",
+            }}
+          >
+            <Text>Ou faça login com</Text>
+            <Box>
+              <Button>Github</Button>
+            </Box>
           </Box>
-        </Box>
-      </Form>
-    </Box>
+        </Form>
+      </Box>
+    </ScreenContainer>
   );
 }

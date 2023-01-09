@@ -6,3 +6,5 @@ export { Button } from "./Button/web";
 export { InputText } from "./InputText/web";
 export { Text } from "./Text/web";
 export { Touchable } from "./Touchable/web";
+export { Provider } from "./Provider/web";
+export { ScreenContainer } from "./ScreenContainer/web";

@@ -18,7 +18,9 @@ const config: Config.InitialOptions = {
   moduleNameMapper: {
     "^@src/(.*)": "<rootDir>/src/$1"
   },
-  snapshotSerializers: [],
+  snapshotSerializers: [
+    "@emotion/jest/serializer"
+  ],
   clearMocks: true,
 };
 

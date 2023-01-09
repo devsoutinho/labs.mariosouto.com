@@ -4,49 +4,120 @@ exports[`<HomeScreen /> 2 renders as expected 1`] = `
 <View
   style={
     {
-      "alignItems": "center",
-      "backgroundColor": "#000",
       "flex": 1,
-      "justifyContent": "center",
+      "flexDirection": "column",
     }
   }
 >
-  <Text
-    style={
+  <RCTScrollView
+    contentContainerStyle={
       {
-        "color": "#fff",
+        "flexGrow": 1,
       }
     }
   >
-    Olá pessoas!
-  </Text>
-  <View
-    accessible={true}
-    collapsable={false}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      {
-        "backgroundColor": "transparent",
-        "opacity": 1,
-      }
-    }
-  >
-    <Text
-      style={
-        {
-          "color": "#fff",
+    <View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#FFD0B5",
+            "flex": 1,
+            "justifyContent": "center",
+            "margin": 20,
+            "padding": 20,
+          }
         }
-      }
-    >
-      Go to Storybook
-    </Text>
-  </View>
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+            }
+          }
+        >
+          Olá pessoas!
+        </Text>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "backgroundColor": "transparent",
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#000",
+              }
+            }
+          >
+            Go to Storybook
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#FFD0B5",
+            "height": 1000,
+            "justifyContent": "center",
+            "margin": 20,
+            "padding": 20,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+            }
+          }
+        >
+          Olá pessoas!
+        </Text>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "backgroundColor": "transparent",
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#000",
+              }
+            }
+          >
+            Go to Storybook
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
 </View>
 `;

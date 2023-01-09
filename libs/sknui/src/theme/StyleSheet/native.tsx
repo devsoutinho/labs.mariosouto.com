@@ -1,2 +1,8 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type StyleSheet = any;
+import { StyleProp, ViewStyle } from "react-native";
+import { ResponsiveValue, StyleSheetCommon } from "./common";
+
+type StylePropsKeys = Partial<keyof StyleProp<ViewStyle>>;
+
+type StyleSheetBase = Partial<Record<StylePropsKeys, ResponsiveValue<unknown>>>;
+
+export type StyleSheet = StyleSheetBase & StyleSheetCommon;

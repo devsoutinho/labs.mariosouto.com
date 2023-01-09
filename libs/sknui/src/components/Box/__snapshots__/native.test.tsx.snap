@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomeScreen /> 2 renders as expected 1`] = `
+<View
+  style={{}}
+>
+  <Text>
+    Hi
+  </Text>
+</View>
+`;

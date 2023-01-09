@@ -1,47 +1,115 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<HomeScreen /> renders as expected 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-color: #FF9466;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
 <div>
   <div
-    style="display: flex; flex-direction: column; flex: 1; align-items: center; justify-content: center;"
+    class="emotion-0"
   >
-    <form
-      style="display: flex; flex-direction: column;"
+    <div
+      class="emotion-1"
     >
-      <label>
-        Email
-        <input
-          style="display: flex;"
-          type="text"
-        />
-      </label>
-      <button
-        style="background: transparent; display: flex; gap: 8px;"
+      <form
+        class="emotion-2"
       >
-        Entrar agora!
-        <div
-          style="display: flex; flex-direction: column;"
+        <label>
+          Email
+          <input
+            style="display: flex;"
+            type="text"
+          />
+        </label>
+        <button
+          style="background: transparent; display: flex; gap: 8px;"
         >
-          arrow_left
-        </div>
-      </button>
-      <div
-        style="display: flex; flex-direction: column; margin-top: 16px;"
-      >
-        <p>
-          Ou faça login com
-        </p>
-        <div
-          style="display: flex; flex-direction: column;"
-        >
-          <button
-            style="background: transparent; display: flex; gap: 8px;"
+          Entrar agora!
+          <div
+            class="emotion-2"
           >
-            Github
-          </button>
+            arrow_left
+          </div>
+        </button>
+        <div
+          class="emotion-4"
+        >
+          <p>
+            Ou faça login com
+          </p>
+          <div
+            class="emotion-2"
+          >
+            <button
+              style="background: transparent; display: flex; gap: 8px;"
+            >
+              Github
+            </button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
 </div>
 `;

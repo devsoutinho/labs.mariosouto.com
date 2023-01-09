@@ -11,10 +11,13 @@ export function InputText({ label, styleSheet }: InputTextProps) {
       {label}
       <input
         type="text"
-        style={{
-          display: "flex",
-          ...styleSheet,
-        }}
+        style={
+          {
+            display: "flex",
+            ...styleSheet,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          } as any
+        }
       />
     </label>
   );
