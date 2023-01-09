@@ -24,12 +24,24 @@ exports[`<HomeScreen /> renders as expected 1`] = `
   justify-content: center;
 }
 
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 16px;
+  color: #fff;
+}
+
 <div>
   <div
     class="emotion-0"
   >
     <p
-      style="color: rgb(255, 255, 255);"
+      class="emotion-1"
     >
       Olá pessoas!
     </p>

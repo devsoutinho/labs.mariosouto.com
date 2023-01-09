@@ -33,6 +33,9 @@ exports[`<HomeScreen /> 2 renders as expected 1`] = `
           style={
             {
               "color": "#000",
+              "fontSize": 48,
+              "fontWeight": "700",
+              "lineHeight": 72,
             }
           }
         >
@@ -60,6 +63,9 @@ exports[`<HomeScreen /> 2 renders as expected 1`] = `
             style={
               {
                 "color": "#000",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "lineHeight": 24,
               }
             }
           >
@@ -83,6 +89,9 @@ exports[`<HomeScreen /> 2 renders as expected 1`] = `
           style={
             {
               "color": "#000",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "lineHeight": 24,
             }
           }
         >
@@ -110,6 +119,9 @@ exports[`<HomeScreen /> 2 renders as expected 1`] = `
             style={
               {
                 "color": "#000",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "lineHeight": 24,
               }
             }
           >
