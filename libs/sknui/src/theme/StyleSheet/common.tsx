@@ -36,5 +36,8 @@ export type StyleSheetCommon = {
   justifyContent?: ResponsiveValue<JustifyContent>;
   flexDirection?: ResponsiveValue<FlexDirection>;
   flexWrap?: ResponsiveValue<FlexWrap>;
+  fontSize?: ResponsiveValue<NumericValue>;
+  fontWeight?: ResponsiveValue<number>;
+  lineHeight?: ResponsiveValue<number>;
   overflow?: never;
 };
