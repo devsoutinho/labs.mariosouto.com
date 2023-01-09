@@ -11,10 +11,12 @@ export function InputText({ label, styleSheet }: InputTextProps) {
       {label}
       <input
         type="text"
-        style={{
-          display: "flex",
-          ...styleSheet,
-        }}
+        style={
+          {
+            display: "flex",
+            ...styleSheet,
+          } as any
+        }
       />
     </label>
   );

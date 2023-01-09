@@ -9,5 +9,14 @@ interface TextProps {
 export function Text({ styleSheet, children, tag }: TextProps) {
   const Tag = tag || "p";
 
-  return <Tag style={styleSheet}>{children}</Tag>;
+  return (
+    <Tag
+      style={{
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ...(styleSheet as any),
+      }}
+    >
+      {children}
+    </Tag>
+  );
 }

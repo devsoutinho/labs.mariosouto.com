@@ -17,10 +17,13 @@ export function Touchable({
   return (
     <TouchableOpacity
       onPress={onTap}
-      style={{
-        backgroundColor: disabled ? "red" : "transparent",
-        ...styleSheet,
-      }}
+      style={
+        {
+          backgroundColor: disabled ? "red" : "transparent",
+          ...styleSheet,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } as any
+      }
     >
       {children}
     </TouchableOpacity>

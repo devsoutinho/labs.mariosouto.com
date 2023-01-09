@@ -22,7 +22,8 @@ export function Touchable({
       style={{
         background: "transparent",
         border: "none",
-        ...styleSheet,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ...(styleSheet as unknown as any),
       }}
       onClick={onTap}
       {...props}
