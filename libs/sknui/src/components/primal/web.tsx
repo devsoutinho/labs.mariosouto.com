@@ -12,9 +12,11 @@ interface BoxProps {
 export function BoxPrimal({ tag, styleSheet, children, ...props }: BoxProps) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Tag = tag || ("div" as any);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Comp = ChakraBox as any;
   return (
-    <ChakraBox as={Tag} {...styleSheet} {...props}>
+    <Comp as={Tag} {...styleSheet} {...props}>
       {children}
-    </ChakraBox>
+    </Comp>
   );
 }

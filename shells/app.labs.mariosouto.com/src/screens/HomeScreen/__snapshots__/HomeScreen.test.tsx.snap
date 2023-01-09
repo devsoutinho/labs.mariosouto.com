@@ -14,7 +14,7 @@ exports[`<HomeScreen /> 2 renders as expected 1`] = `
   <Text
     style={
       {
-        "color": "#fff",
+        "color": "#000",
       }
     }
   >
@@ -41,7 +41,7 @@ exports[`<HomeScreen /> 2 renders as expected 1`] = `
     <Text
       style={
         {
-          "color": "#fff",
+          "color": "#000",
         }
       }
     >

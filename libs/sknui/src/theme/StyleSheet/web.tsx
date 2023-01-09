@@ -1,25 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { StyleProps } from "@chakra-ui/system";
-import {
-  ResponsiveValue,
-  Width,
-  Display,
-  Color,
-  Flex,
-  AlignItems,
-  JustifyContent,
-  FlexDirection,
-  FlexWrap,
-} from "./common";
+import { ResponsiveValue, StyleSheetCommon } from "./common";
 
-type StylePropsKeys = Partial<StyleProps>;
+type StylePropsKeys = Partial<keyof StyleProps>;
 
-export type StyleSheet = StylePropsKeys & {
-  display?: ResponsiveValue<Display>;
-  width?: ResponsiveValue<Width>;
-  color?: ResponsiveValue<Color>;
-  flex?: ResponsiveValue<Flex>;
-  alignItems?: AlignItems;
-  justifyContent?: JustifyContent;
-  flexDirection?: FlexDirection;
-  flexWrap?: FlexWrap;
-};
+type StyleSheetBase = Partial<Record<StylePropsKeys, ResponsiveValue<unknown>>>;
+
+export type StyleSheet = StyleSheetBase & StyleSheetCommon;

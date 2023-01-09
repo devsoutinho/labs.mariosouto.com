@@ -5,6 +5,7 @@ export type ResponsiveValue<Type> = Partial<Record<Breakpoints, Type>> | Type;
 export type Width = string;
 export type Display = "flex" | "inline-flex" | "none";
 export type Color = string;
+export type BackgroundColor = Color;
 export type AlignItems =
   | "flex-start"
   | "flex-end"
@@ -21,3 +22,15 @@ export type JustifyContent =
 export type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
 export type FlexWrap = "nowrap" | "wrap" | "wrap-reverse";
 export type Flex = string | number;
+
+export type StyleSheetCommon = {
+  display?: ResponsiveValue<Display>;
+  width?: ResponsiveValue<Width>;
+  backgroundColor?: ResponsiveValue<BackgroundColor>;
+  color?: ResponsiveValue<Color>;
+  flex?: ResponsiveValue<Flex>;
+  alignItems?: ResponsiveValue<AlignItems>;
+  justifyContent?: ResponsiveValue<JustifyContent>;
+  flexDirection?: ResponsiveValue<FlexDirection>;
+  flexWrap?: ResponsiveValue<FlexWrap>;
+};

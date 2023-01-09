@@ -12,14 +12,16 @@ export function HomeScreen({ navigation }: RootStackHomeScreenProps) {
       <Box
         styleSheet={{
           flex: 1,
-          backgroundColor: theme.colors.primary.x100,
+          backgroundColor: {
+            xs: theme.colors.primary.x100,
+          },
           alignItems: "center",
           justifyContent: "center",
         }}
       >
         <Text
           styleSheet={{
-            color: "#fff",
+            color: "#000",
           }}
         >
           {message}
@@ -27,7 +29,7 @@ export function HomeScreen({ navigation }: RootStackHomeScreenProps) {
         <Touchable onTap={() => navigation.navigate("storybook")}>
           <Text
             styleSheet={{
-              color: "#fff",
+              color: "#000",
             }}
           >
             Go to Storybook

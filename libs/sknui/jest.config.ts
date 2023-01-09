@@ -32,7 +32,6 @@ const web: Config.InitialOptions = {
   moduleNameMapper: {
     "^@src/(.*)": "<rootDir>/src/$1",
   },
-  snapshotSerializers: [],
   clearMocks: true,
 };
 
