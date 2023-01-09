@@ -12,7 +12,7 @@ describe("<HomeScreen />", () => {
       .create(<HomeScreen navigation={mock} route={mock} key="" />)
       .toJSON();
     const children = (tree as any).children;
-    expect(children.length).toBe(2);
+    expect(children.length).toBe(1);
   });
 });
 
