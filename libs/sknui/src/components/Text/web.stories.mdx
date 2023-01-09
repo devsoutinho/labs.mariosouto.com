@@ -22,3 +22,22 @@ Text is the base component for texts
     }}
   </Story>
 </Canvas>
+
+
+<Canvas>
+  <Story
+    name="Text Component - with responsive typography"
+    args={{
+      ...Text.defaultProps,
+      typographyToken: {
+        xs: "body1",
+        sm: "display1"
+      },
+      children: "Hello World",
+    }}
+>
+    {(args) => {
+      return <Text {...args} />;
+    }}
+  </Story>
+</Canvas>
