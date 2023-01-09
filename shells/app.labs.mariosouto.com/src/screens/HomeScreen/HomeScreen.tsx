@@ -28,6 +28,7 @@ export function HomeScreen({ navigation }: RootStackHomeScreenProps) {
         }}
       >
         <Text
+          typographyToken="heading1"
           styleSheet={{
             color: "#000",
           }}

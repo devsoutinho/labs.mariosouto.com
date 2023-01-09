@@ -23,6 +23,9 @@ export function HomeScreen() {
           backgroundColor: theme.colors.primary.x300,
         }}
       >
+        <Text typographyToken={{ xs: "body1", lg: "display1" }}>
+          Bem vindo!
+        </Text>
         <Form
           onSubmit={() => {
             window.location.href = "/dashboard";

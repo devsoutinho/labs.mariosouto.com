@@ -1,3 +1,5 @@
+import { Provider } from "../src/components/Provider/web";
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -7,3 +9,11 @@ export const parameters = {
     },
   },
 }
+
+export const decorators = [
+  (Story) => (
+    <Provider>
+      <Story />
+    </Provider>
+  )
+];
