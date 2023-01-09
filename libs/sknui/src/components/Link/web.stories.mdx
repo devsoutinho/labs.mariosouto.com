@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import { Link } from "./web";
+
+<Meta title="Components/Link" />
+
+# Link
+
+Link ...
+
+<ArgsTable of={Link} />
+
+<Canvas>
+  <Story
+    name="Link Component - Default"
+    args={{
+      ...Link.defaultProps,
+      styleSheet: {
+          backgroundColor: "orange",
+          padding: "10px",
+          width: "50px",
+          height: "50px",
+      }
+    }}
+>
+    {(args) => {
+      return <Link {...args} />;
+    }}
+  </Story>
+</Canvas>

@@ -1,0 +1,23 @@
+{
+  "name": "extension.labs.mariosouto.com",
+  "license": "MIT",
+  "version": "1.0.0", 
+  "scripts": {
+    "lint": "eslint './**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "yarn lint --fix",
+    "test": "jest --maxWorkers=2",
+    "test:watch": "yarn test --watch",
+    "dev": "webpack --watch --progress --config webpack.config.js --mode=development",
+    "build": "webpack --progress --config webpack.config.js --mode=production"
+  }, 
+  "dependencies": {
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "@devsoutinho/sknui": "*"
+  },
+  "devDependencies": {
+    "@devsoutinho/common-tooling": "*",
+    "@devsoutinho/common-test": "*",
+    "@devsoutinho/common-eslint": "*"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "private": true,
+  "name": "@devsoutinho/platform",
+  "license": "MIT",
+    "workspaces": {
+      "packages": [
+        "libs/*",
+        "shells/*"
+      ]
+    },
+  "devDependencies": {
+    "@types/jest": "^29.2.5"
+  },
+  "dependencies": {
+    "eslint-plugin-prettier": "4.2.1",
+    "jest-environment-jsdom": "29.3.1"
+  },
+  "scripts": {
+    "test": "yarn workspaces run test",
+    "lint": "yarn workspaces run lint",
+
+    "web": "yarn workspace web.labs.mariosouto.com",
+    "dev:web": "yarn web dev",
+    "lint:web": "yarn web lint",
+    "test:web": "yarn web test",
+    "build:web": "yarn web build",
+    
+    "app": "yarn workspace app.labs.mariosouto.com",
+    "dev:app": "yarn app dev",
+    "lint:app": "yarn app lint",
+    "test:app": "yarn app test",
+    "build:app": "yarn app build",
+
+    "ui": "yarn workspace @devsoutinho/sknui",
+    "dev:ui": "yarn ui dev",
+    "lint:ui": "yarn ui lint",
+    "test:ui": "yarn ui test",
+    "build:ui": "yarn ui build",
+
+    "cli": "yarn workspace cli.labs.mariosouto.com",
+    "dev:cli": "yarn cli dev",
+    "build:cli": "yarn cli build",
+    "lint:cli": "yarn cli lint",
+    "test:cli": "yarn cli test",
+
+    "extension": "yarn workspace extension.labs.mariosouto.com",
+    "dev:extension": "yarn extension dev",
+    "lint:extension": "yarn extension lint",
+    "test:extension": "yarn extension test",
+    "build:extension": "yarn extension build",
+
+    "playground:web": "yarn workspace @devsoutinho/sknui dev",
+    "playground:app": "yarn app playground",
+
+    "dscli": "dscli",
+    "postinstall": "cd ./shells/cli.labs.mariosouto.com && yarn link && cd ../../"
+  }
+}

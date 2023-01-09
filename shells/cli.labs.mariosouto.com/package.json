@@ -1,0 +1,29 @@
+{
+  "name": "cli.labs.mariosouto.com",
+  "version": "1.0.0",
+  "description": "My own CLI",
+  "license": "MIT",
+  "bin": {
+    "dscli": ".bin"
+  },
+  "scripts": {
+    "lint": "eslint './**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "yarn lint --fix",
+    "test": "jest --maxWorkers=2",
+    "test:watch": "yarn test --watch",
+    "dev": "webpack --watch --progress --config webpack.config.js --mode=development",
+    "build": "webpack --progress --config webpack.config.js --mode=production"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "commander": "^9.5.0",
+    "inquirer": "^9.1.4"
+  },
+  "devDependencies": {
+    "shelljs": "0.8.5",
+    "@types/inquirer": "9.0.3",
+    "@devsoutinho/common-tooling": "*",
+    "@devsoutinho/common-test": "*",
+    "@devsoutinho/common-lint": "*"
+  }
+}

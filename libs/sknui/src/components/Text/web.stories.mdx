@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import { Text } from "./web";
+
+<Meta title="Components/Text" />
+
+# Text
+
+Text is the base component for texts
+
+<ArgsTable of={Text} />
+
+<Canvas>
+  <Story
+    name="Text Component - Default"
+    args={{
+      ...Text.defaultProps,
+      children: "Hello World",
+    }}
+>
+    {(args) => {
+      return <Text {...args} />;
+    }}
+  </Story>
+</Canvas>

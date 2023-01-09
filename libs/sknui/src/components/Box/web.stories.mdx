@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import { Box } from "./web";
+
+<Meta title="Components/Box" />
+
+# Box
+
+Box is the base component
+
+<ArgsTable of={Box} />
+
+<Canvas>
+  <Story
+    name="Box Component - Default"
+    args={{
+      ...Box.defaultProps,
+      styleSheet: {
+          backgroundColor: "orange",
+          padding: "10px",
+          width: "50px",
+          height: "50px",
+      }
+    }}
+>
+    {(args) => {
+      return <Box {...args} />;
+    }}
+  </Story>
+</Canvas>

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomeScreen /> renders as expected 1`] = `
+<div>
+  <div
+    style="display: flex; flex-direction: column; flex: 1; align-items: center; justify-content: center;"
+  >
+    <form
+      style="display: flex; flex-direction: column;"
+    >
+      <label>
+        Email
+        <input
+          style="display: flex;"
+          type="text"
+        />
+      </label>
+      <button
+        style="background: transparent; display: flex; gap: 8px;"
+      >
+        Entrar
+        <div
+          style="display: flex; flex-direction: column;"
+        >
+          arrow_left
+        </div>
+      </button>
+      <div
+        style="display: flex; flex-direction: column; margin-top: 16px;"
+      >
+        <p>
+          Ou faça login com
+        </p>
+        <div
+          style="display: flex; flex-direction: column;"
+        >
+          <button
+            style="background: transparent; display: flex; gap: 8px;"
+          >
+            Github
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;

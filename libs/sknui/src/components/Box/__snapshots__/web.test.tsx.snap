@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Box /> renders as expected 1`] = `
+<div>
+  <div
+    style="display: flex; flex-direction: column;"
+  >
+    <p>
+      Hello
+    </p>
+  </div>
+</div>
+`;
