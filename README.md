@@ -15,8 +15,19 @@
 </p>
 
 ---
-
-[[Releases]](https://github.com/devsoutinho/labs.mariosouto.com/releases) • [[Shells]](./shells/) • [[Templates]](./Templates/)
+<p align="center">
+   <a href="https://github.com/devsoutinho/labs.mariosouto.com/releases">
+      [Releases]
+   </a>
+   <span> • </span>
+   <a href="./shells/">
+      [Shells]
+   </a>
+   <span> • </span>
+   <a href="./templates">
+      [Templates]
+   </a>
+<p/>
 
 ---
 
