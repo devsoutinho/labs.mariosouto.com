@@ -24,7 +24,6 @@ function parseValue(
       "fontSize",
       styleSheet as any
     ) as any;
-    console.warn(receivedValue);
     return Number(fontSize) * Number(receivedValue);
   }
 
