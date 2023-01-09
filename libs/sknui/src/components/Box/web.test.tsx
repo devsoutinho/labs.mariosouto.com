@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "./web";
-import { customRender } from "../../../commons/testing-library/web";
+import { customRender } from "@devsoutinho/common-test/testing-library/web";
 import { Text } from "../Text/web";
 
 const render = customRender();

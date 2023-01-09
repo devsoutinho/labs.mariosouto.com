@@ -2,7 +2,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import { HomeScreen } from "./HomeScreen";
-import { customRender } from "../../../commons/testing-library/native";
+import { customRender } from "@devsoutinho/common-test/testing-library/native";
 
 const mock = {} as any;
 
