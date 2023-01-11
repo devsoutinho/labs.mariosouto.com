@@ -6,6 +6,7 @@ import { Text, Touchable } from "../web";
 interface ButtonProps {
   type?: "button" | "submit" | "reset";
   variant: "primary" | "secondary" | "accent" | "ghost" | "destructive";
+  onTap?: () => void;
   styleSheet?: StyleSheet;
   children: React.ReactNode;
   prefix?: React.ReactNode;
@@ -17,6 +18,7 @@ export function Button({
   children,
   prefix,
   suffix,
+  ...props
 }: ButtonProps) {
   const { theme } = useTheme();
   const PrefixComponent = prefix;
@@ -105,6 +107,7 @@ export function Button({
         ...styleSheet,
         ...(buttonStyles as unknown as StyleSheet),
       }}
+      {...props}
     >
       {PrefixComponent}
       <Text>{children}</Text>

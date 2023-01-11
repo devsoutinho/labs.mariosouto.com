@@ -11,7 +11,7 @@ export const DEFAULT_SPACING = {
   x4: "16px", // 1rem
   x5: "20px", // 1.25rem'
   x6: "24px", // 1.5rem
-  x7: "1.75rem", // 1.75rem
+  x7: "28px", // 1.75rem
   x8: "32px", // 2rem
   x9: "36px", // 2.25rem
   x10: "40px", // 2.5rem

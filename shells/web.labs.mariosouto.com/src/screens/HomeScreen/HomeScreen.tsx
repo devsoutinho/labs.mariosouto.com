@@ -8,10 +8,13 @@ import {
   Link,
   InputText,
   Button,
+  Form,
+  useToast,
 } from "@devsoutinho/sknui/web";
 
 export function HomeScreen() {
   const { theme } = useTheme();
+  const toast = useToast();
 
   return (
     <ScreenContainer
@@ -75,10 +78,20 @@ export function HomeScreen() {
             color: theme.colors.neutral.x500,
           }}
         >
-          <Box>
+          <Form
+            onSubmit={() => {
+              toast({
+                title: "Falha no login",
+                description: "Conta não cadastrada",
+                status: "error",
+                duration: 9000,
+                isClosable: true,
+              });
+            }}
+          >
             <InputText label="Email" />
             <Button type="submit">Entrar</Button>
-          </Box>
+          </Form>
           <Box
             styleSheet={{
               marginTop: theme.spacing.x6,
@@ -114,7 +127,20 @@ export function HomeScreen() {
               marginTop: theme.spacing.x6,
             }}
           >
-            <Button variant="secondary">GitHub</Button>
+            <Button
+              variant="secondary"
+              onTap={() => {
+                toast({
+                  title: "Falha no login",
+                  description: "Esta opção está temporariamente desabilitada",
+                  status: "warning",
+                  duration: 9000,
+                  isClosable: true,
+                });
+              }}
+            >
+              GitHub
+            </Button>
           </Box>
         </Box>
       </Box>

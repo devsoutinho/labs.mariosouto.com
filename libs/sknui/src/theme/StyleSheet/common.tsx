@@ -47,6 +47,10 @@ export type StyleSheetCommon = {
   lineHeight?: ResponsiveValue<number>;
   overflow?: never;
   opacity?: ResponsiveValue<number>;
+  boxShadow?: ResponsiveValue<string>;
+  // Border
+  borderStyle?: ResponsiveValue<string>;
+  borderColor?: ResponsiveValue<Color>;
   // <Image /> specific
   objectFit?: ResponsiveValue<ObjectFit>;
   objectPosition?: ResponsiveValue<string>;

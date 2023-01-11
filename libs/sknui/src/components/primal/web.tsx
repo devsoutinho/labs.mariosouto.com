@@ -6,10 +6,17 @@ interface BoxProps {
   tag?: string;
   styleSheet?: StyleSheet;
   children: React.ReactNode;
+  innerRef?: React.RefObject<HTMLElement>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }
-export function BoxPrimal({ tag, styleSheet, children, ...props }: BoxProps) {
+export function BoxPrimal({
+  tag,
+  innerRef,
+  styleSheet,
+  children,
+  ...props
+}: BoxProps) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Tag = tag || ("div" as any);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -20,7 +27,7 @@ export function BoxPrimal({ tag, styleSheet, children, ...props }: BoxProps) {
   };
 
   return (
-    <Comp as={Tag} {...defaultStyles} {...styleSheet} {...props}>
+    <Comp ref={innerRef} as={Tag} {...defaultStyles} {...styleSheet} {...props}>
       {children}
     </Comp>
   );
