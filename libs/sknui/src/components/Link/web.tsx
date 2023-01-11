@@ -1,4 +1,5 @@
 import React from "react";
+import { Display } from "../../theme/StyleSheet/common";
 import { StyleSheet } from "../../theme/StyleSheet/web";
 import { Touchable } from "../web";
 
@@ -20,11 +21,19 @@ export function Link({
   const PrefixComponent = prefix;
   const SuffixComponent = suffix;
 
+  const linkStyles: StyleSheet = {
+    display: "inline" as Display,
+    textDecoration: "underline",
+    _hover: {
+      opacity: 0.6,
+    },
+  };
+
   return (
     <Touchable
       href={href}
       styleSheet={{
-        display: "flex",
+        ...linkStyles,
         ...styleSheet,
       }}
       {...props}

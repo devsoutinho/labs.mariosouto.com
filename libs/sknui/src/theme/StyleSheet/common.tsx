@@ -22,6 +22,12 @@ export type JustifyContent =
 export type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
 export type FlexWrap = "nowrap" | "wrap" | "wrap-reverse";
 export type Flex = string | number;
+export type ObjectFit = "fill" | "contain" | "cover" | "none" | "scale-down";
+
+type StyleSheetCommonState = Omit<
+  StyleSheetCommon,
+  "_hover" | "_focus" | "_disabled" | "__focusVisible"
+>;
 
 export type StyleSheetCommon = {
   display?: ResponsiveValue<Display>;
@@ -40,4 +46,13 @@ export type StyleSheetCommon = {
   fontWeight?: ResponsiveValue<number>;
   lineHeight?: ResponsiveValue<number>;
   overflow?: never;
+  opacity?: ResponsiveValue<number>;
+  // <Image /> specific
+  objectFit?: ResponsiveValue<ObjectFit>;
+  objectPosition?: ResponsiveValue<string>;
+  // States
+  _hover?: StyleSheetCommonState;
+  _focus?: StyleSheetCommonState;
+  _disabled?: StyleSheetCommonState;
+  __focusVisible?: StyleSheetCommonState;
 };

@@ -5,7 +5,7 @@ import { BoxPrimal } from "../primal/web";
 interface BoxProps {
   tag?: string;
   styleSheet?: StyleSheet;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }

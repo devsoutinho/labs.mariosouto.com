@@ -3,10 +3,11 @@ import { Box } from "../Box/native";
 
 interface ScreenContainer {
   children: React.ReactNode;
+  styleSheet: StyleSheet;
 }
-export function ScreenContainer({ children }: ScreenContainer) {
+export function ScreenContainer({ children, styleSheet }: ScreenContainer) {
   return (
-    <Box styleSheet={{ flex: 1, flexDirection: "column" }}>
+    <Box styleSheet={{ flex: 1, flexDirection: "column", ...styleSheet }}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         {children}
       </ScrollView>

@@ -73,4 +73,4 @@ export const DEFAULT_COLORS = {
     x800: "#AD1D07",
     x900: "#841003",
   },
-};
+} as const;
