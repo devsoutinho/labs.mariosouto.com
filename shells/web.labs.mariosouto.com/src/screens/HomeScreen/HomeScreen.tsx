@@ -24,7 +24,9 @@ export function HomeScreen() {
       <Box
         styleSheet={{
           width: "100%",
-          maxWidth: "400px",
+          maxWidth: {
+            sm: "400px",
+          },
           paddingY: theme.spacing.x12,
         }}
       >
