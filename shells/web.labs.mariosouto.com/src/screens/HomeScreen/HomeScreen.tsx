@@ -24,7 +24,7 @@ export function HomeScreen() {
       <Box
         styleSheet={{
           width: "100%",
-          maxWidth: "448px",
+          maxWidth: "400px",
           paddingY: theme.spacing.x12,
         }}
       >
@@ -112,9 +112,7 @@ export function HomeScreen() {
               marginTop: theme.spacing.x6,
             }}
           >
-            <Box styleSheet={{ flex: 1 }} />
             <Button variant="secondary">GitHub</Button>
-            <Box styleSheet={{ flex: 1 }} />
           </Box>
         </Box>
       </Box>
