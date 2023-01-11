@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="./LICENSE">
-    <img src="https://img.shields.io/badge/licence-MIT-blue.svg" alt="License MIT" />
+    <img src="https://img.shields.io/badge/licence-MIT-orange.svg" alt="License MIT" />
   </a>
   <a href="https://github.com/yarnpkg/yarn">
     <img src="https://img.shields.io/badge/maintained%20with-yarn-006db2.svg" alt="Maintained with Melos" />
