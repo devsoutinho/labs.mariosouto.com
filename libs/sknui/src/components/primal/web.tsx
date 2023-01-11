@@ -17,7 +17,6 @@ export function BoxPrimal({ tag, styleSheet, children, ...props }: BoxProps) {
 
   const defaultStyles = {
     display: "flex",
-    overflow: "hidden",
   };
 
   return (

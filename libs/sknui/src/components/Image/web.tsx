@@ -7,7 +7,8 @@ interface ImageProps {
   styleSheet?: StyleSheet;
 }
 export function Image({ src, alt, styleSheet }: ImageProps) {
-  const { objectFit, objectPosition, ...pictureStyleSheet } = styleSheet || {};
+  const { objectFit, objectPosition, borderRadius, ...pictureStyleSheet } =
+    styleSheet || {};
 
   return (
     <Box tag="picture" styleSheet={pictureStyleSheet}>
@@ -16,6 +17,7 @@ export function Image({ src, alt, styleSheet }: ImageProps) {
         src={src}
         alt={alt}
         style={{
+          borderRadius,
           objectPosition,
           objectFit: objectFit || "cover",
           width: "100%",

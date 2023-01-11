@@ -26,7 +26,7 @@ export type ObjectFit = "fill" | "contain" | "cover" | "none" | "scale-down";
 
 type StyleSheetCommonState = Omit<
   StyleSheetCommon,
-  "_hover" | "_focus" | "_disabled" | "__focusVisible"
+  "_hover" | "_focus" | "_disabled" | "_focusVisible"
 >;
 
 export type StyleSheetCommon = {
@@ -54,5 +54,5 @@ export type StyleSheetCommon = {
   _hover?: StyleSheetCommonState;
   _focus?: StyleSheetCommonState;
   _disabled?: StyleSheetCommonState;
-  __focusVisible?: StyleSheetCommonState;
+  _focusVisible?: StyleSheetCommonState;
 };

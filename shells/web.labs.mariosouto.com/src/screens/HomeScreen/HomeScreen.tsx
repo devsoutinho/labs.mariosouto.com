@@ -75,10 +75,11 @@ export function HomeScreen() {
         >
           <Box>
             <InputText label="Email" />
-            <Button>Entrar</Button>
+            <Button type="submit">Entrar</Button>
           </Box>
           <Box
             styleSheet={{
+              marginTop: theme.spacing.x6,
               flexDirection: "row",
               alignItems: "center",
             }}
@@ -112,7 +113,7 @@ export function HomeScreen() {
             }}
           >
             <Box styleSheet={{ flex: 1 }} />
-            <Button>GitHub Icon</Button>
+            <Button variant="secondary">GitHub</Button>
             <Box styleSheet={{ flex: 1 }} />
           </Box>
         </Box>

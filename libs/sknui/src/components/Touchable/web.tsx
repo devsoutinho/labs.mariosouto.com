@@ -23,7 +23,7 @@ export function Touchable({
         outline: "2px solid currentColor",
       }
     : {
-        outline: "2px solid currentColor",
+        outline: "2px solid red",
         outlineOffset: "2px",
       };
 
@@ -40,7 +40,7 @@ export function Touchable({
         _focusVisible: {
           ...outlineStyles,
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          ...(styleSheet?.__focusVisible as unknown as any),
+          ...(styleSheet?._focusVisible as unknown as any),
         },
       }}
       onClick={onTap}
