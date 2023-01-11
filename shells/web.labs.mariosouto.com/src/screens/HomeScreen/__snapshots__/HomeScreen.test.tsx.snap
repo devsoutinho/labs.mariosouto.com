@@ -6,27 +6,13 @@ exports[`<HomeScreen /> renders as expected 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.emotion-1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: hidden;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+  background-color: #F7F7F7;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -35,7 +21,25 @@ exports[`<HomeScreen /> renders as expected 1`] = `
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
-  background-color: #FF9466;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+@media screen and (min-width: 640px) {
+  .emotion-1 {
+    max-width: 400px;
+  }
 }
 
 .emotion-2 {
@@ -43,18 +47,13 @@ exports[`<HomeScreen /> renders as expected 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
-  font-weight: 400;
-  line-height: 1.5;
-  font-size: 18px;
-}
-
-@media screen and (min-width: 1024px) {
-  .emotion-2 {
-    font-weight: 700;
-    line-height: 1.5;
-    font-size: 60px;
-  }
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-3 {
@@ -62,33 +61,350 @@ exports[`<HomeScreen /> renders as expected 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 56px;
+  height: 56px;
 }
 
-.emotion-5 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-top: 16px;
 }
 
 .emotion-6 {
+  display: block;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 30px;
+  margin-top: 24px;
+}
+
+.emotion-7 {
+  display: block;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 16px;
+  text-align: center;
+}
+
+.emotion-8 {
+  display: inline;
+  background: var(--chakra-colors-transparent);
+  border: var(--chakra-borders-none);
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:hover,
+.emotion-8[data-hover] {
+  opacity: 0.6;
+}
+
+.emotion-8:focus-visible,
+.emotion-8[data-focus-visible] {
+  border-radius: 2px;
+  outline: 2px solid currentColor;
+}
+
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
+  background-color: #FFFFFF;
+  margin-top: 24px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  -webkit-padding-start: 40px;
+  padding-inline-start: 40px;
+  -webkit-padding-end: 40px;
+  padding-inline-end: 40px;
+  color: #7E7E7E;
+}
+
+@media screen and (min-width: 640px) {
+  .emotion-9 {
+    border-radius: 8px;
+  }
+}
+
+.emotion-11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: 14px;
+  color: #515151;
+}
+
+.emotion-13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 14px;
+  width: 100%;
+  border-width: 1px;
+  border-color: #9E9E9E;
+  border-style: solid;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  -webkit-padding-start: 8px;
+  padding-inline-start: 8px;
+  -webkit-padding-end: 8px;
+  padding-inline-end: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  margin-top: 4px;
+}
+
+.emotion-13:focus,
+.emotion-13[data-focus] {
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px,#F35627 0px 0px 0px 1px,rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  border-color: #F35627;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.emotion-15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: var(--chakra-colors-transparent);
+  border: var(--chakra-borders-none);
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  border-width: 1px;
+  border-color: var(--chakra-colors-transparent);
+  color: #FFFFFF;
+  background-color: #F35627;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
+  overflow: initial;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  gap: 8px;
+  border-radius: 6px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  -webkit-padding-start: 16px;
+  padding-inline-start: 16px;
+  -webkit-padding-end: 16px;
+  padding-inline-end: 16px;
+}
+
+.emotion-15:focus-visible,
+.emotion-15[data-focus-visible] {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: #FFFFFF 0px 0px 0px 2px,#F35627 0px 0px 0px 4px,rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+
+.emotion-15::-webkit-input-placeholder {
+  color: #9E9E9E;
+}
+
+.emotion-15::-moz-placeholder {
+  color: #9E9E9E;
+}
+
+.emotion-15:-ms-input-placeholder {
+  color: #9E9E9E;
+}
+
+.emotion-15::placeholder {
+  color: #9E9E9E;
+}
+
+.emotion-15:hover,
+.emotion-15[data-hover] {
+  opacity: 0.8;
+}
+
+.emotion-16 {
+  display: block;
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
+}
+
+.emotion-17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-top: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 1px;
+  background-color: #E1E1E1;
+}
+
+.emotion-19 {
+  display: block;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 16px;
+  -webkit-padding-start: 8px;
+  padding-inline-start: 8px;
+  -webkit-padding-end: 8px;
+  padding-inline-end: 8px;
+}
+
+.emotion-21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-top: 24px;
+}
+
+.emotion-22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: var(--chakra-colors-transparent);
+  border: var(--chakra-borders-none);
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  border-width: 1px;
+  border-color: #B1B1B1;
+  color: #7E7E7E;
+  background-color: #FFFFFF;
+  border-style: solid;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
+  overflow: initial;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  gap: 8px;
+  border-radius: 6px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  -webkit-padding-start: 16px;
+  padding-inline-start: 16px;
+  -webkit-padding-end: 16px;
+  padding-inline-end: 16px;
+}
+
+.emotion-22:focus-visible,
+.emotion-22[data-focus-visible] {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: #FFFFFF 0px 0px 0px 2px,#B1B1B1 0px 0px 0px 4px,rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+
+.emotion-22::-webkit-input-placeholder {
+  color: #9E9E9E;
+}
+
+.emotion-22::-moz-placeholder {
+  color: #9E9E9E;
+}
+
+.emotion-22:-ms-input-placeholder {
+  color: #9E9E9E;
+}
+
+.emotion-22::placeholder {
+  color: #9E9E9E;
+}
+
+.emotion-22:hover,
+.emotion-22[data-hover] {
+  opacity: 0.8;
 }
 
 <div>
@@ -98,50 +414,105 @@ exports[`<HomeScreen /> renders as expected 1`] = `
     <div
       class="emotion-1"
     >
-      <p
+      <div
         class="emotion-2"
       >
-        Bem vindo!
-      </p>
-      <form
-        class="emotion-3"
-      >
-        <label>
-          Email
-          <input
-            style="display: flex;"
-            type="text"
-          />
-        </label>
-        <button
-          style="background: transparent; display: flex; gap: 8px;"
+        <picture
+          class="emotion-3"
         >
-          Entrar agora!
-          <div
-            class="emotion-3"
-          >
-            arrow_left
-          </div>
-        </button>
+          <img
+            alt="Logo DevSoutinho"
+            class="emotion-4"
+            src="https://www.datocms-assets.com/85225/1673400260-logo-devsoutinho.png"
+            style="border-radius: 9999px; object-fit: cover; width: 100%; height: 100%;"
+          />
+        </picture>
         <div
-          class="emotion-5"
+          class="emotion-4"
         >
           <p
             class="emotion-6"
           >
-            Ou faça login com
+            Entre na sua conta
+          </p>
+          <p
+            class="emotion-7"
+          >
+            Ou 
+            <a
+              class="emotion-8"
+              href="/home"
+            >
+              acesse a área pública
+            </a>
+          </p>
+        </div>
+      </div>
+      <div
+        class="emotion-9"
+      >
+        <form
+          class="emotion-4"
+        >
+          <div
+            class="emotion-11"
+          >
+            <label
+              class="emotion-12"
+            >
+              Email
+              <input
+                aria-describedby="inputtext_undefined_error"
+                aria-errormessage="inputtext_undefined_error"
+                class="emotion-13"
+                id="inputtext_undefined"
+                type="text"
+              />
+            </label>
+            <div
+              class="emotion-14"
+            />
+          </div>
+          <button
+            class="emotion-15"
+            type="submit"
+          >
+            <p
+              class="emotion-16"
+            >
+              Entrar
+            </p>
+          </button>
+        </form>
+        <div
+          class="emotion-17"
+        >
+          <div
+            class="emotion-18"
+          />
+          <p
+            class="emotion-19"
+          >
+            Ou continue com
           </p>
           <div
-            class="emotion-3"
-          >
-            <button
-              style="background: transparent; display: flex; gap: 8px;"
-            >
-              Github
-            </button>
-          </div>
+            class="emotion-18"
+          />
         </div>
-      </form>
+        <div
+          class="emotion-21"
+        >
+          <button
+            class="emotion-22"
+          >
+            <p
+              class="emotion-16"
+            >
+              GitHub
+            </p>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <span
