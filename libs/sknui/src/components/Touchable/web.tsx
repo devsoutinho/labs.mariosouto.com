@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet } from "../../theme/web";
+import { BoxPrimal } from "../primal/web";
+import { StyleSheet } from "../../theme/StyleSheet/web";
 
 interface TouchableProps {
   href?: string;
@@ -16,19 +17,36 @@ export function Touchable({
 }: TouchableProps) {
   const isLink = Boolean(href);
   const Tag = isLink ? "a" : "button";
+  const outlineStyles = isLink
+    ? {
+        borderRadius: "2px",
+        outline: "2px solid currentColor",
+      }
+    : {
+        outline: "2px solid red",
+        outlineOffset: "2px",
+      };
+
   return (
-    <Tag
+    <BoxPrimal
+      tag={Tag}
       href={href}
-      style={{
+      styleSheet={{
         background: "transparent",
         border: "none",
+        transition: "opacity 0.2s",
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ...(styleSheet as unknown as any),
+        _focusVisible: {
+          ...outlineStyles,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          ...(styleSheet?._focusVisible as unknown as any),
+        },
       }}
       onClick={onTap}
       {...props}
     >
       {children}
-    </Tag>
+    </BoxPrimal>
   );
 }

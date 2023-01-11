@@ -7,4 +7,6 @@ export { InputText } from "./InputText/web";
 export { Text } from "./Text/web";
 export { Touchable } from "./Touchable/web";
 export { Provider } from "./Provider/web";
+export { Image } from "./Image/web";
 export { ScreenContainer } from "./ScreenContainer/web";
+export { useToast } from "./Toast/web";

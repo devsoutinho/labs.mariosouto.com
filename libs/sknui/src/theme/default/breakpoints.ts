@@ -4,6 +4,6 @@ export const DEFAULT_BREAKPOINTS = {
   md: 768,
   lg: 1024,
   xl: 1280,
-};
+} as const;
 
 export type Breakpoints = keyof typeof DEFAULT_BREAKPOINTS;
