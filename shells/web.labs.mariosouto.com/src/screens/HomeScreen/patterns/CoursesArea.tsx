@@ -1,3 +1,5 @@
+import { Box, useTheme } from "@devsoutinho/sknui/web";
+
 export const posts = [
   {
     title: "Lorem ipsum dorm",
@@ -53,19 +55,38 @@ export const posts = [
 ];
 
 export function CoursesArea() {
+  const { theme } = useTheme();
+
   return (
-    <div className="relative bg-gray-50 px-6 pt-16 pb-20 lg:px-8 lg:pt-24 lg:pb-28">
+    <Box
+      styleSheet={{
+        position: "relative",
+        backgroundColor: theme.colors.neutral.x050,
+        paddingX: {
+          xs: theme.spacing.x6,
+          lg: theme.spacing.x8,
+        },
+        paddingTop: {
+          xs: theme.spacing.x16,
+          lg: theme.spacing.x24,
+        },
+        paddingBottom: {
+          xs: theme.spacing.x20,
+          lg: theme.spacing.x28,
+        },
+      }}
+    >
       <div className="absolute inset-0">
         <div className="h-1/3 bg-white sm:h-2/3" />
       </div>
       <div className="relative mx-auto max-w-7xl">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            From the blog
+            Últimos Lançamentos
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
-            libero labore natus atque, ducimus sed.
+            Aqui você acompanha as últimas novidades do DevSoutinho pra você
+            aprender e se divertir
           </p>
         </div>
         <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
@@ -126,6 +147,6 @@ export function CoursesArea() {
           ))}
         </div>
       </div>
-    </div>
+    </Box>
   );
 }

@@ -6,6 +6,18 @@ import { ResponsiveValue } from "../../theme/StyleSheet/common";
 import { parseResponsiveToken } from "./logic/parseTypographyToken";
 import { BoxPrimal } from "../primal/web";
 
+const srOnlyStyles = {
+  position: "absolute",
+  width: "1px",
+  height: "1px",
+  padding: 0,
+  margin: "-1px",
+  overflow: "hidden",
+  clip: "rect(0, 0, 0, 0)",
+  whiteSpace: "nowrap",
+  border: 0,
+};
+
 const inlineTags = [
   "span",
   "a",
@@ -41,6 +53,7 @@ const inlineTags = [
 
 interface TextProps {
   id?: string;
+  srOnly?: boolean;
   tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
   styleSheet?: StyleSheet;
   typographyToken?: ResponsiveValue<TypographyToken>;
@@ -51,6 +64,7 @@ export function Text({
   styleSheet,
   children,
   tag,
+  srOnly,
 }: TextProps) {
   const { theme } = useTheme();
   const Tag = tag || "p";
@@ -68,6 +82,7 @@ export function Text({
         display: inlineTags.includes(Tag) ? "inline" : "block",
         ...typographyStyles,
         ...styleSheet,
+        ...(srOnly && srOnlyStyles),
       }}
     >
       {children}

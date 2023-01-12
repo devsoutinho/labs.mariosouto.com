@@ -48,6 +48,7 @@ export type StyleSheetCommon = {
   overflow?: never;
   opacity?: ResponsiveValue<number>;
   boxShadow?: ResponsiveValue<string>;
+  order?: ResponsiveValue<number>;
   // Border
   borderStyle?: ResponsiveValue<string>;
   borderColor?: ResponsiveValue<Color>;

@@ -4,7 +4,7 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useTheme } from "@devsoutinho/sknui/web";
 import { CoursesArea } from "./patterns/CoursesArea";
-import { Footer } from "./patterns/Footer";
+import { Footer } from "@src/patterns/Footer/Footer";
 
 const navigation = [
   { name: "Product", href: "#" },

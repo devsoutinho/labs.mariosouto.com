@@ -37,6 +37,11 @@ export function Touchable({
         transition: "opacity 0.2s",
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ...(styleSheet as unknown as any),
+        _hover: {
+          opacity: 0.6,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          ...(styleSheet?._focusVisible as unknown as any),
+        },
         _focusVisible: {
           ...outlineStyles,
           // eslint-disable-next-line @typescript-eslint/no-explicit-any

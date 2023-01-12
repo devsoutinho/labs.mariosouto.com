@@ -46,7 +46,7 @@ export const DEFAULT_TYPOGRAPHY = {
   },
   body4: {
     fontWeight: 400,
-    lineHeight: 1.5,
+    lineHeight: 1.6,
     fontSize: "12px",
   },
   body5: {
