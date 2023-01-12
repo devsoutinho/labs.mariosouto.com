@@ -16,7 +16,7 @@ export const DEFAULT_TYPOGRAPHY = {
   },
   heading3: {
     fontWeight: 700,
-    lineHeight: 1.5,
+    lineHeight: 1.1,
     fontSize: "30px",
   },
   heading4: {

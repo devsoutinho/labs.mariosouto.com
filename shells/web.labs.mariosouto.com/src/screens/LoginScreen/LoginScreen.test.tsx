@@ -1,5 +1,5 @@
 import React from "react";
-import { HomeScreen } from "./HomeScreen";
+import { HomeScreen } from "./LoginScreen";
 import { customRender } from "@devsoutinho/common-test/testing-library/web";
 import { Provider } from "@devsoutinho/sknui/web";
 
