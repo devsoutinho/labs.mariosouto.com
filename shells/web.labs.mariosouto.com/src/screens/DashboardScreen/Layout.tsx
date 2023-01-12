@@ -243,9 +243,9 @@ const user = {
   imageUrl: "https://github.com/omariosouto.png",
 };
 const stats = [
-  { label: "Vacation days left", value: 12 },
-  { label: "Sick days left", value: 4 },
-  { label: "Personal days left", value: 2 },
+  { label: "Lorem ipsum dorme", value: 12 },
+  { label: "Sit amet", value: 4 },
+  { label: "Valum tale heist", value: 2 },
 ];
 
 export function Heading() {
