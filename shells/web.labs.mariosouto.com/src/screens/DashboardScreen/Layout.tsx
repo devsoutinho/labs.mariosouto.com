@@ -88,7 +88,7 @@ export function Layout() {
                     <div className="flex flex-shrink-0 items-center px-4">
                       <img
                         className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                        src="https://www.datocms-assets.com/85225/1673400260-logo-devsoutinho.png"
                         alt="Your Company"
                       />
                     </div>
@@ -130,10 +130,10 @@ export function Layout() {
                         </div>
                         <div className="ml-3">
                           <p className="text-base font-medium text-white">
-                            Tom Cook
+                            Mario Souto
                           </p>
                           <p className="text-sm font-medium text-gray-400 group-hover:text-gray-300">
-                            View profile
+                            Ver perfil
                           </p>
                         </div>
                       </div>
@@ -155,8 +155,8 @@ export function Layout() {
             <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
               <div className="flex flex-shrink-0 items-center px-4">
                 <img
-                  className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  className="h-8 w-auto rounded-full"
+                  src="https://www.datocms-assets.com/85225/1673400260-logo-devsoutinho.png"
                   alt="Your Company"
                 />
               </div>
@@ -192,14 +192,16 @@ export function Layout() {
                   <div>
                     <img
                       className="inline-block h-9 w-9 rounded-full"
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      src="https://github.com/omariosouto.png"
                       alt=""
                     />
                   </div>
                   <div className="ml-3">
-                    <p className="text-sm font-medium text-white">Tom Cook</p>
+                    <p className="text-sm font-medium text-white">
+                      Mario Souto
+                    </p>
                     <p className="text-xs font-medium text-gray-300 group-hover:text-gray-200">
-                      View profile
+                      Ver perfil
                     </p>
                   </div>
                 </div>
@@ -211,7 +213,7 @@ export function Layout() {
           <div className="sticky top-0 z-10 bg-gray-100 pl-1 pt-1 sm:pl-3 sm:pt-3 md:hidden">
             <button
               type="button"
-              className="-ml-0.5 -mt-0.5 inline-flex h-12 w-12 items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              className="-ml-0.5 -mt-0.5 inline-flex h-12 w-12 items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500"
               onClick={() => setSidebarOpen(true)}
             >
               <span className="sr-only">Open sidebar</span>
@@ -238,10 +240,9 @@ export function Layout() {
 }
 
 const user = {
-  name: "Rebecca Nicholas",
-  role: "Product Designer",
-  imageUrl:
-    "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+  name: "Mario Souto",
+  role: "Lead Software Engineer",
+  imageUrl: "https://github.com/omariosouto.png",
 };
 const stats = [
   { label: "Vacation days left", value: 12 },
@@ -266,7 +267,7 @@ export function Heading() {
               />
             </div>
             <div className="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
-              <p className="text-sm font-medium text-gray-600">Welcome back,</p>
+              <p className="text-sm font-medium text-gray-600">Olá,</p>
               <p className="text-xl font-bold text-gray-900 sm:text-2xl">
                 {user.name}
               </p>
@@ -315,7 +316,7 @@ export function Posts() {
           </div>
           <div className="flex flex-1 flex-col justify-between bg-white p-6">
             <div className="flex-1">
-              <p className="text-sm font-medium text-indigo-600">
+              <p className="text-sm font-medium text-red-600">
                 <a href={post.category.href} className="hover:underline">
                   {post.category.name}
                 </a>

@@ -65,8 +65,8 @@ function Header() {
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <img
-                  className="h-8"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=red&shade=600"
+                  className="h-10"
+                  src="https://www.datocms-assets.com/85225/1673400260-logo-devsoutinho.png"
                   alt=""
                 />
               </a>
@@ -94,7 +94,7 @@ function Header() {
             </div>
             <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
               <a
-                href="#"
+                href="/login"
                 className="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
               >
                 Log in

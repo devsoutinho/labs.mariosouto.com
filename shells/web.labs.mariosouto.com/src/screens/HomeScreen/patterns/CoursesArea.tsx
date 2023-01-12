@@ -1,6 +1,6 @@
 export const posts = [
   {
-    title: "Boost your conversion rate",
+    title: "Lorem ipsum dorm",
     href: "#",
     category: { name: "Article", href: "#" },
     description:
@@ -13,12 +13,11 @@ export const posts = [
     author: {
       name: "Roel Aufderehar",
       href: "#",
-      imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      imageUrl: "https://picsum.photos/40/40",
     },
   },
   {
-    title: "How to use search engine optimization to drive sales",
+    title: "First example test",
     href: "#",
     category: { name: "Video", href: "#" },
     description:
@@ -31,12 +30,11 @@ export const posts = [
     author: {
       name: "Brenna Goyette",
       href: "#",
-      imageUrl:
-        "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      imageUrl: "https://picsum.photos/40/40",
     },
   },
   {
-    title: "Improve your customer experience",
+    title: "Second example test",
     href: "#",
     category: { name: "Case Study", href: "#" },
     description:
@@ -49,8 +47,7 @@ export const posts = [
     author: {
       name: "Daniela Metz",
       href: "#",
-      imageUrl:
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      imageUrl: "https://picsum.photos/40/40",
     },
   },
 ];
@@ -86,7 +83,7 @@ export function CoursesArea() {
               </div>
               <div className="flex flex-1 flex-col justify-between bg-white p-6">
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-indigo-600">
+                  <p className="text-sm font-medium text-red-600">
                     <a href={post.category.href} className="hover:underline">
                       {post.category.name}
                     </a>

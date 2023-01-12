@@ -3,7 +3,7 @@ import { Box } from "../Box/native";
 
 interface ScreenContainer {
   children: React.ReactNode;
-  styleSheet: StyleSheet;
+  styleSheet?: StyleSheet;
 }
 export function ScreenContainer({ children, styleSheet }: ScreenContainer) {
   return (

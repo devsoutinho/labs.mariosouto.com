@@ -82,7 +82,7 @@ export function LoginScreen() {
                 textAlign: "center",
               }}
             >
-              Ou <Link href="/dashboard">acesse a área pública</Link>
+              Ou <Link href="/dashboard">entre no modo público</Link>
             </Text>
           </Box>
         </Box>
