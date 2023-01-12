@@ -1,10 +1,5 @@
-import { Box, Text, Link } from "@devsoutinho/sknui/web";
+import { Layout } from "./Layout";
 
 export function DashboardScreen() {
-  return (
-    <Box>
-      <Text tag="h1">Welcome to DashboardScreen!</Text>
-      <Link href="/">Voltar ao login</Link>
-    </Box>
-  );
+  return <Layout />;
 }
