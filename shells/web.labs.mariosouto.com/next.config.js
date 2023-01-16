@@ -12,11 +12,12 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/challenges/001-css-preview-border-radius',
-        destination: 'https://devsoutinho.notion.site/CSS-Preview-Border-Radius-DevSoutinhoChallenges-14fd017db675495b81ce5cd5f68981f0',
+        source: "/challenges/001-css-preview-border-radius",
+        destination:
+          "https://devsoutinho.notion.site/CSS-Preview-Border-Radius-DevSoutinhoChallenges-14fd017db675495b81ce5cd5f68981f0",
         permanent: true,
       },
-    ]
+    ];
   },
 };
 
