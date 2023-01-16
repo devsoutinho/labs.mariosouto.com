@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@devsoutinho/sknui": "*",
-    "@react-navigation/native": "6.1.1",
+    "@react-navigation/native": "6.1.2",
     "@react-navigation/native-stack": "6.9.7",
     "expo": "~47.0.12",
     "expo-status-bar": "~1.4.2",
