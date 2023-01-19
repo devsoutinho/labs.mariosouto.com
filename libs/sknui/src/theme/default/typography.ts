@@ -1,32 +1,32 @@
 export const DEFAULT_TYPOGRAPHY = {
   display1: {
     fontWeight: 700,
-    lineHeight: 1.5,
+    lineHeight: 1,
     fontSize: "60px",
   },
   heading1: {
     fontWeight: 700,
-    lineHeight: 1.5,
+    lineHeight: 1,
     fontSize: "48px",
   },
   heading2: {
     fontWeight: 700,
-    lineHeight: 1.5,
+    lineHeight: 1,
     fontSize: "36px",
   },
   heading3: {
     fontWeight: 700,
-    lineHeight: 1.5,
+    lineHeight: 1,
     fontSize: "30px",
   },
   heading4: {
     fontWeight: 700,
-    lineHeight: 1.5,
+    lineHeight: 1,
     fontSize: "20px",
   },
   heading5: {
     fontWeight: 700,
-    lineHeight: 1.5,
+    lineHeight: 1,
     fontSize: "16px",
   },
   body1: {

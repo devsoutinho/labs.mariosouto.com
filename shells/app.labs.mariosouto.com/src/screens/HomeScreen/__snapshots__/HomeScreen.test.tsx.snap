@@ -35,7 +35,7 @@ exports[`<HomeScreen /> 2 renders as expected 1`] = `
               "color": "#000",
               "fontSize": 48,
               "fontWeight": "700",
-              "lineHeight": 72,
+              "lineHeight": 48,
             }
           }
         >

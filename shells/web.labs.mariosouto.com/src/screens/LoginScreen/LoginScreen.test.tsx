@@ -1,13 +1,13 @@
 import React from "react";
-import { HomeScreen } from "./HomeScreen";
+import { LoginScreen } from "./LoginScreen";
 import { customRender } from "@devsoutinho/common-test/testing-library/web";
 import { Provider } from "@devsoutinho/sknui/web";
 
 const render = customRender((props) => <Provider {...props} />);
 
-describe("<HomeScreen />", () => {
+describe("<LoginScreen />", () => {
   it("renders as expected", () => {
-    const { container } = render(<HomeScreen />);
+    const { container } = render(<LoginScreen />);
 
     expect(container).toMatchSnapshot();
   });
