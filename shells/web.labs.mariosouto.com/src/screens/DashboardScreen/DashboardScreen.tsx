@@ -19,7 +19,7 @@ export function DashboardScreen() {
       }}
     >
       <Text tag="h1" typographyToken="heading1">
-        Ainda não temos nada por aqui :(
+        #DevSoutinhoChallenges
       </Text>
       <Box
         tag="ul"
