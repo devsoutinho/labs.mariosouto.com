@@ -45,6 +45,7 @@ export function DashboardScreen() {
           styleSheet={{
             marginTop: theme.spacing.x6,
             marginBottom: theme.spacing.x6,
+            paddingLeft: theme.spacing.x4,
           }}
         >
           {challenges.map((challenge) => (
