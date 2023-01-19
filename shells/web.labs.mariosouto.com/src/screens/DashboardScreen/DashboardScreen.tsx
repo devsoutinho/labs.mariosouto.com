@@ -73,7 +73,7 @@ export function DashboardScreen() {
         </Text>
         <Text
           styleSheet={{
-            marginTop: theme.spacing.x2,
+            marginTop: theme.spacing.x4,
           }}
         >
           Você está acessando o #DevSoutinhoLabs no modo público, o que
