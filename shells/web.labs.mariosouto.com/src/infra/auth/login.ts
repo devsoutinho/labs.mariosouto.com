@@ -33,7 +33,11 @@ const providers = {
 type LoginProviders = keyof typeof providers;
 
 export async function login(provider: LoginProviders, email?: string) {
-  const redirectUrl = `${window.location.origin}/auth`;
+  const isPROD = process.env.NODE_ENV === "production";
+  const redirectUrl = isPROD
+    ? "https://labs.mariosouto.com/auth"
+    : `${window.location.origin}/auth`;
+
   await providers[provider]({ email, redirectUrl });
 }
 
