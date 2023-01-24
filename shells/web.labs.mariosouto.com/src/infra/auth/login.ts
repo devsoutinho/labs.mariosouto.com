@@ -39,7 +39,7 @@ export async function login(provider: LoginProviders, email?: string) {
     : "https://labs.mariosouto.com/auth";
 
   // eslint-disable-next-line no-console
-  console.log("redirectUrl", redirectUrl);
+  console.log("redirectUrl", process.env.NODE_ENV, redirectUrl);
 
   await providers[provider]({ email, redirectUrl });
 }
