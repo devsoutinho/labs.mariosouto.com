@@ -34,6 +34,10 @@ type LoginProviders = keyof typeof providers;
 
 export async function login(provider: LoginProviders, email?: string) {
   const redirectUrl = `${window.location.origin}/auth`;
+
+  // eslint-disable-next-line no-console
+  console.log("redirectUrl", process.env.NODE_ENV, redirectUrl);
+
   await providers[provider]({ email, redirectUrl });
 }
 
