@@ -5,7 +5,11 @@ import {
   useTheme,
   Touchable,
   Image,
+  Button,
 } from "@devsoutinho/sknui/web";
+import { logout } from "@src/infra/auth/login";
+import { getDB } from "@src/infra/db";
+import React from "react";
 
 const challenges = [
   {
@@ -14,9 +18,48 @@ const challenges = [
   },
 ];
 
+interface Profile {
+  id: string;
+  first_name: string;
+  avatar_url: string;
+}
 export function DashboardScreen() {
   const { theme } = useTheme();
   const maxWidth = "600px";
+  const [profile, setProfile] = React.useState<Partial<Profile>>();
+  const db = getDB();
+  const isUserLoggedIn = !!profile;
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    (async () => {
+      try {
+        const userInfo = await db.auth.getUser();
+        const { data } = await db
+          .from("profiles")
+          .select("id, first_name, avatar_url");
+
+        if (userInfo.data.user?.user_metadata) {
+          setProfile({
+            id: userInfo.data.user.id,
+            first_name: userInfo.data.user.user_metadata.name.split(" ")[0],
+            avatar_url: userInfo.data.user.user_metadata.avatar_url,
+          });
+          return;
+        }
+
+        const loggedUser = data && data[0];
+        if (loggedUser) setProfile(loggedUser);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    })();
+  }, [db]);
+
+  if (isLoading) return <Text>Loading...</Text>;
+
   return (
     <Box
       styleSheet={{
@@ -62,23 +105,47 @@ export function DashboardScreen() {
             />
           </Touchable>
         </Box>
-        <Text
-          tag="h1"
-          typographyToken={{
-            xs: "heading2",
-            md: "heading1",
+        <Box
+          styleSheet={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            gap: theme.spacing.x4,
           }}
         >
-          Olá!
-        </Text>
+          {profile?.avatar_url && (
+            <Image
+              src={profile.avatar_url}
+              alt="Avatar"
+              styleSheet={{
+                width: theme.spacing.x20,
+                height: theme.spacing.x20,
+                borderRadius: theme.rounded.full,
+              }}
+            />
+          )}
+          <Text
+            tag="h1"
+            typographyToken={{
+              xs: "heading3",
+              md: "heading1",
+            }}
+          >
+            Olá,
+            {profile && ` ${profile.first_name}`}
+          </Text>
+        </Box>
         <Text
           styleSheet={{
             marginTop: theme.spacing.x4,
           }}
         >
-          Você está acessando o #DevSoutinhoLabs no modo público, o que
+          {isUserLoggedIn
+            ? `Obrigado por se cadastrar! Em breve teremos mais novidades, como achievements, conteúdo exclusivo e muito mais.`
+            : `Você está acessando o #DevSoutinhoLabs no modo público, o que
           significa que você pode ver os challenges, mas em breve para poder
-          colecionar conquistas e outras novidades vamos librar o acesso logado.
+          colecionar conquistas e outras novidades vamos librar o acesso logado.`}
           <br />
           <br />
           Por hora, convido você a fazer o challenge atual e participar do nosso
@@ -125,6 +192,23 @@ export function DashboardScreen() {
         </Box>
         <Link href="/">Voltar ao login</Link>
       </Box>
+      {isUserLoggedIn && (
+        <Box
+          styleSheet={{
+            marginTop: theme.spacing.x6,
+            width: "100%",
+            maxWidth: maxWidth,
+            alignSelf: "center",
+            justifyContent: "center",
+            borderRadius: theme.rounded.md,
+            boxShadow: theme.shadow.default,
+            padding: theme.spacing.x6,
+            backgroundColor: theme.colors.neutral.x000,
+          }}
+        >
+          <Button onTap={async () => await logout()}>Logout</Button>
+        </Box>
+      )}
     </Box>
   );
 }

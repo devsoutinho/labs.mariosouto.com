@@ -12,10 +12,12 @@ import {
   useToast,
   Touchable,
 } from "@devsoutinho/sknui/web";
+import { login } from "@src/infra/auth/login";
 
 export function LoginScreen() {
   const { theme } = useTheme();
   const toast = useToast();
+  const [email, setEmail] = React.useState("");
 
   return (
     <ScreenContainer
@@ -115,17 +117,38 @@ export function LoginScreen() {
             }}
           >
             <Form
-              onSubmit={() => {
-                toast({
-                  title: "Falha no login",
-                  description: "Conta não cadastrada",
-                  status: "error",
-                  duration: 9000,
-                  isClosable: true,
-                });
+              onSubmit={async () => {
+                try {
+                  if (!email) throw new Error("Email não informado");
+                  if (!email.includes("@"))
+                    throw new Error("Email com formato inválido");
+
+                  toast({
+                    title: "Login iniciado com sucesso!",
+                    description:
+                      "confira seu email e clique no link mágico recebido",
+                    status: "success",
+                    duration: 9000,
+                    isClosable: true,
+                  });
+                  await login("emailOnly", email);
+                } catch (err) {
+                  toast({
+                    title: "Falha no login",
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    description: (err as unknown as any).message,
+                    status: "error",
+                    duration: 9000,
+                    isClosable: true,
+                  });
+                }
               }}
             >
-              <InputText label="Email" />
+              <InputText
+                label="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
               <Button type="submit">Entrar</Button>
             </Form>
             <Box
@@ -165,14 +188,15 @@ export function LoginScreen() {
             >
               <Button
                 variant="secondary"
-                onTap={() => {
-                  toast({
-                    title: "Falha no login",
-                    description: "Esta opção está temporariamente desabilitada",
-                    status: "warning",
-                    duration: 9000,
-                    isClosable: true,
-                  });
+                onTap={async () => {
+                  try {
+                    await login("github");
+                  } catch {
+                    toast({
+                      title: "Erro ao realizar login",
+                      status: "error",
+                    });
+                  }
                 }}
                 suffix={
                   <Box
