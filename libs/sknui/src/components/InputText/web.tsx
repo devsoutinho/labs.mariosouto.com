@@ -33,6 +33,8 @@ export function InputText({
   error,
   styleSheet,
   formRegister,
+  value,
+  onChange,
   disabled,
 }: InputTextProps) {
   const { theme } = useTheme();
@@ -49,6 +51,8 @@ export function InputText({
   const inputId = `inputtext_${inputName}`;
   const inputErrorId = `inputtext_${inputName}_error`;
   const inputError = formRegisterError || error;
+  const inputValue = value;
+  const inputOnChange = onChange;
 
   const inputTextStateInvalidOrDefault = inputError ? "invalid" : "default";
   const inputTextState = disabled ? "disabled" : inputTextStateInvalidOrDefault;
@@ -115,6 +119,8 @@ export function InputText({
           aria-describedby={inputErrorId}
           aria-errormessage={inputErrorId}
           styleSheet={inputStyleSheet}
+          value={inputValue}
+          onChange={inputOnChange}
           {...formRegisterProps}
         />
       </Box>

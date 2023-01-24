@@ -5,7 +5,11 @@ import {
   useTheme,
   Touchable,
   Image,
+  Button,
 } from "@devsoutinho/sknui/web";
+import { logout } from "@src/infra/auth/login";
+import { getDB } from "@src/infra/db";
+import React from "react";
 
 const challenges = [
   {
@@ -14,9 +18,31 @@ const challenges = [
   },
 ];
 
+interface Profile {
+  id: string;
+  first_name: string;
+  avatar_url: string;
+}
 export function DashboardScreen() {
   const { theme } = useTheme();
   const maxWidth = "600px";
+  const [profile, setProfile] = React.useState<Partial<Profile>>();
+  const db = getDB();
+  const isUserLoggedIn = !!profile;
+
+  React.useEffect(() => {
+    (async () => {
+      const { data } = await db
+        .from("profiles")
+        .select("id, first_name, avatar_url");
+
+      const loggedUser = data && data[0];
+      if (loggedUser) {
+        setProfile(loggedUser);
+      }
+    })();
+  }, [db]);
+
   return (
     <Box
       styleSheet={{
@@ -69,7 +95,8 @@ export function DashboardScreen() {
             md: "heading1",
           }}
         >
-          Olá!
+          Olá,
+          {profile && ` ${profile.first_name}`}
         </Text>
         <Text
           styleSheet={{
@@ -125,6 +152,23 @@ export function DashboardScreen() {
         </Box>
         <Link href="/">Voltar ao login</Link>
       </Box>
+      {isUserLoggedIn && (
+        <Box
+          styleSheet={{
+            marginTop: theme.spacing.x6,
+            width: "100%",
+            maxWidth: maxWidth,
+            alignSelf: "center",
+            justifyContent: "center",
+            borderRadius: theme.rounded.md,
+            boxShadow: theme.shadow.default,
+            padding: theme.spacing.x6,
+            backgroundColor: theme.colors.neutral.x000,
+          }}
+        >
+          <Button onTap={() => logout()}>Logout</Button>
+        </Box>
+      )}
     </Box>
   );
 }
