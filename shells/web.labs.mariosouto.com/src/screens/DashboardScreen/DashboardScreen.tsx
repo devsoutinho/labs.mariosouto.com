@@ -29,19 +29,36 @@ export function DashboardScreen() {
   const [profile, setProfile] = React.useState<Partial<Profile>>();
   const db = getDB();
   const isUserLoggedIn = !!profile;
+  const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
     (async () => {
-      const { data } = await db
-        .from("profiles")
-        .select("id, first_name, avatar_url");
+      try {
+        const userInfo = await db.auth.getUser();
+        const { data } = await db
+          .from("profiles")
+          .select("id, first_name, avatar_url");
 
-      const loggedUser = data && data[0];
-      if (loggedUser) {
-        setProfile(loggedUser);
+        if (userInfo.data.user?.user_metadata) {
+          setProfile({
+            id: userInfo.data.user.id,
+            first_name: userInfo.data.user.user_metadata.name.split(" ")[0],
+            avatar_url: userInfo.data.user.user_metadata.avatar_url,
+          });
+          return;
+        }
+
+        const loggedUser = data && data[0];
+        if (loggedUser) setProfile(loggedUser);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     })();
   }, [db]);
+
+  if (isLoading) return <Text>Loading...</Text>;
 
   return (
     <Box
@@ -88,24 +105,47 @@ export function DashboardScreen() {
             />
           </Touchable>
         </Box>
-        <Text
-          tag="h1"
-          typographyToken={{
-            xs: "heading2",
-            md: "heading1",
+        <Box
+          styleSheet={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            gap: theme.spacing.x4,
           }}
         >
-          Olá,
-          {profile && ` ${profile.first_name}`}
-        </Text>
+          {profile?.avatar_url && (
+            <Image
+              src={profile.avatar_url}
+              alt="Avatar"
+              styleSheet={{
+                width: theme.spacing.x20,
+                height: theme.spacing.x20,
+                borderRadius: theme.rounded.full,
+              }}
+            />
+          )}
+          <Text
+            tag="h1"
+            typographyToken={{
+              xs: "heading3",
+              md: "heading1",
+            }}
+          >
+            Olá,
+            {profile && ` ${profile.first_name}`}
+          </Text>
+        </Box>
         <Text
           styleSheet={{
             marginTop: theme.spacing.x4,
           }}
         >
-          Você está acessando o #DevSoutinhoLabs no modo público, o que
+          {isUserLoggedIn
+            ? `Obrigado por se cadastrar! Em breve teremos mais novidades, como achievements, conteúdo exclusivo e muito mais.`
+            : `Você está acessando o #DevSoutinhoLabs no modo público, o que
           significa que você pode ver os challenges, mas em breve para poder
-          colecionar conquistas e outras novidades vamos librar o acesso logado.
+          colecionar conquistas e outras novidades vamos librar o acesso logado.`}
           <br />
           <br />
           Por hora, convido você a fazer o challenge atual e participar do nosso
@@ -166,7 +206,7 @@ export function DashboardScreen() {
             backgroundColor: theme.colors.neutral.x000,
           }}
         >
-          <Button onTap={() => logout()}>Logout</Button>
+          <Button onTap={async () => await logout()}>Logout</Button>
         </Box>
       )}
     </Box>
