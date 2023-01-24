@@ -33,7 +33,11 @@ const providers = {
 type LoginProviders = keyof typeof providers;
 
 export async function login(provider: LoginProviders, email?: string) {
-  const redirectUrl = `${window.location.origin}/auth`;
+  const redirectUrl = `${
+    process.env.NEXT_PUBLIC_VERCEL_URL
+      ? "https://" + process.env.NEXT_PUBLIC_VERCEL_URL + "/auth"
+      : "http://localhost:3000/auth"
+  }`;
 
   // eslint-disable-next-line no-console
   console.log("redirectUrl", process.env.NODE_ENV, redirectUrl);
