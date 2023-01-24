@@ -17,7 +17,7 @@ import { login } from "@src/infra/auth/login";
 export function LoginScreen() {
   const { theme } = useTheme();
   const toast = useToast();
-  const [email, setEmail] = React.useState("mariosoutoskn@gmail.com");
+  const [email, setEmail] = React.useState("");
 
   return (
     <ScreenContainer
@@ -119,6 +119,10 @@ export function LoginScreen() {
             <Form
               onSubmit={async () => {
                 try {
+                  if (!email) throw new Error("Email não informado");
+                  if (!email.includes("@"))
+                    throw new Error("Email com formato inválido");
+
                   toast({
                     title: "Login iniciado com sucesso!",
                     description:
@@ -131,6 +135,8 @@ export function LoginScreen() {
                 } catch (err) {
                   toast({
                     title: "Falha no login",
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    description: (err as unknown as any).message,
                     status: "error",
                     duration: 9000,
                     isClosable: true,
