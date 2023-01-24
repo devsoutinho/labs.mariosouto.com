@@ -33,10 +33,7 @@ const providers = {
 type LoginProviders = keyof typeof providers;
 
 export async function login(provider: LoginProviders, email?: string) {
-  const isDevLocal = !window.location.href.startsWith("http://localhost");
-  const redirectUrl = isDevLocal
-    ? `${window.location.origin}/auth`
-    : "https://labs.mariosouto.com/auth";
+  const redirectUrl = `${window.location.origin}/auth`;
 
   // eslint-disable-next-line no-console
   console.log("redirectUrl", process.env.NODE_ENV, redirectUrl);
