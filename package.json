@@ -54,6 +54,9 @@
     "playground:web": "yarn workspace @devsoutinho/sknui dev",
     "playground:app": "yarn app playground",
 
+    "db:start": "yarn web db:start",
+    "db:migration": "supabase db diff --use-migra -f ",
+
     "dscli": "dscli",
     "postinstall": "cd ./shells/cli.labs.mariosouto.com && yarn link && cd ../../"
   },

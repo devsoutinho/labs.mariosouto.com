@@ -10,7 +10,8 @@
     "test:watch": "yarn test --watch",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "db:start": "supabase start"
   },
   "dependencies": {
     "@devsoutinho-labs/chat-gpt": "*",
