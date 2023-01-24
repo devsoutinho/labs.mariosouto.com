@@ -33,8 +33,8 @@ const providers = {
 type LoginProviders = keyof typeof providers;
 
 export async function login(provider: LoginProviders, email?: string) {
-  const isPROD = process.env.NODE_ENV === "production";
-  const redirectUrl = !isPROD
+  const isDevLocal = !window.location.href.startsWith("http://localhost");
+  const redirectUrl = isDevLocal
     ? `${window.location.origin}/auth`
     : "https://labs.mariosouto.com/auth";
 
