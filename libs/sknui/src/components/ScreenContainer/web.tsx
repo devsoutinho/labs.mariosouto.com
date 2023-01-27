@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet } from "../../theme/StyleSheet/web";
 import { BoxPrimal } from "../primal/web";
 

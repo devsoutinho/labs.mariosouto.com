@@ -15,6 +15,7 @@
   "permissions": [
     "background",
     "tabs",
+    "storage",
     "webNavigation",
     "activeTab"
   ],

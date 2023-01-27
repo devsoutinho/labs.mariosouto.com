@@ -16,6 +16,7 @@
     "@devsoutinho/sknui": "*"
   },
   "devDependencies": {
+    "@types/chrome": "0.0.210",
     "@devsoutinho/common-tooling": "*",
     "@devsoutinho/common-test": "*",
     "@devsoutinho/common-lint": "*"

@@ -1,3 +1,4 @@
+import React from "react";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { ThemeProvider } from "../../theme/components/ThemeProvider";
 import { theme } from "../../theme/default/theme";
