@@ -1,9 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { getDB } from "@src/infra/db";
 
 export const userRepository = {
   async getUserIdByEmail_god(userEmail: string) {
-    console.error("TODO", userEmail);
-    return "";
+    const db = getDB("god");
+    const { data } = await db
+      .from("users")
+      .select("id")
+      .eq("email", userEmail);
+
+    return (data as unknown as any)[0]?.id as string;
   },
   async getUserIdFromSession() {
     const db = getDB();

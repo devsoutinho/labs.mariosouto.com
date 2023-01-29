@@ -12,7 +12,7 @@ interface WorkshopScreenProps {
 }
 
 export function WorkshopScreen({ workshop }: WorkshopScreenProps) {
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
   const [isUserOwner, setIsUserOwner] = React.useState(false);
   const [userEmail, setUserEmail] = React.useState<string | null>(null);
 
@@ -56,15 +56,16 @@ export function WorkshopScreen({ workshop }: WorkshopScreenProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (isUserOwner)
+  if (loading) return <Box>Carregando...</Box>;
+
+  if (isUserOwner) {
     return (
       <Box>
         Você já comprou este workshop, procure em seu e-mail pelos próximos
         passos
       </Box>
     );
-
-  if (loading) return <Box>Carregando...</Box>;
+  }
 
   return (
     <Box

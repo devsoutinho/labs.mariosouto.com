@@ -20,6 +20,7 @@ const eventHandlers = {
   },
   "checkout.session.completed": async (data: any) => {
     const customerEmail = data.customer_details.email;
+
     await login("emailOnly", customerEmail);
 
     const sessionData = await stripe.checkout.sessions.retrieve(data.id, {
@@ -36,6 +37,7 @@ const eventHandlers = {
       const customerId = await userRepository.getUserIdByEmail_god(
         customerEmail
       );
+      console.log("customerId", customerId);
 
       if (workshop && customerId) {
         workshopsRepository.registerStudent(workshop.id, customerId);
