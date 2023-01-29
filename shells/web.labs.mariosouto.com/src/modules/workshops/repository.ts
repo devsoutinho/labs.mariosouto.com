@@ -12,20 +12,24 @@ const TABLE_NAME = "course";
 export const workshopsRepository = {
   async isUserOwnerOfWorkshop(
     workshopId: string,
-    userEmail: string
+    customerId: string
   ): Promise<boolean> {
     const db = getDB();
     const { data, error } = await db
       .from("course_student")
       .select("*")
       .eq("course_id", workshopId)
-      .eq("student_email", userEmail);
+      .eq("customer_id", customerId);
 
     // eslint-disable-next-line no-console
     console.log({ data, error });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const output = (data as unknown as any)[0] as Workshop;
-    return !!output;
+    const output = data as unknown as any as Workshop[];
+
+    if (output.length === 1) {
+      return true;
+    }
+    return false;
   },
   async getWorkshopByStripePriceId(
     stripePriceId: string
@@ -40,19 +44,16 @@ export const workshopsRepository = {
     const output = (data as unknown as any)[0] as Workshop;
     return output;
   },
-  async registerStudent(
-    workshopId: string,
-    studentEmail: string
-  ): Promise<void> {
+  async registerStudent(workshopId: string, customerId: string): Promise<void> {
     // eslint-disable-next-line no-console
     console.log({
       workshopId,
-      studentEmail,
+      customerId,
     });
     const db = getDB("god");
     await db.from("course_student").insert({
       course_id: workshopId,
-      student_email: studentEmail,
+      customer_id: customerId,
     });
   },
   async getAll(): Promise<Workshop[]> {

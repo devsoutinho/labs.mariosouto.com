@@ -38,6 +38,7 @@ export function WorkshopScreen({ workshop }: WorkshopScreenProps) {
 
   React.useEffect(() => {
     (async () => {
+      const customerId = await userRepository.getUserIdFromSession();
       const email = await userRepository.getUserEmail();
 
       if (typeof email === "string") setUserEmail(email);
@@ -45,13 +46,14 @@ export function WorkshopScreen({ workshop }: WorkshopScreenProps) {
       if (email) {
         const isUserOwner = await workshopsRepository.isUserOwnerOfWorkshop(
           workshop.id,
-          email
+          customerId
         );
         setIsUserOwner(isUserOwner);
       }
 
       setLoading(false);
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isUserOwner)

@@ -5,6 +5,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { buffer } from "micro";
 import { login } from "@src/infra/auth/login";
 import { workshopsRepository } from "@src/modules/workshops/repository";
+import { userRepository } from "@src/modules/user/respository";
 
 const KEY = process.env.STRIPE_SECRET_KEY as string;
 const WH_KEY = process.env.STRIPE_WEBHOOK_KEY as string;
@@ -32,8 +33,18 @@ const eventHandlers = {
         stripePriceId
       );
 
-      if (workshop) {
-        workshopsRepository.registerStudent(workshop.id, customerEmail);
+      const customerId = await userRepository.getUserIdByEmail_god(
+        customerEmail
+      );
+
+      if (workshop && customerId) {
+        workshopsRepository.registerStudent(workshop.id, customerId);
+      } else {
+        console.error(
+          "Error registering student in workshop",
+          workshop,
+          customerId
+        );
       }
     });
   },
