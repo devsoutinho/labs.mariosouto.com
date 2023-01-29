@@ -9,6 +9,7 @@ export function CourseScreen({ course }: CourseScreenProps) {
     <Box>
       <Text tag="h1">{course.name}</Text>
       <Box>{course.description}</Box>
+      <Box>Esse curso é um TESTE e nada será entregue caso efetue a compra</Box>
       <Button
         onTap={() => {
           alert("Comprar");
