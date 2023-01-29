@@ -1,7 +1,1 @@
-export function CoursesScreen() {
-  return (
-    <div>
-      <h1>All courses</h1>
-    </div>
-  );
-}
+export { CoursesScreen as default } from "@src/screens/CoursesScreen/CoursesScreen";
