@@ -4,10 +4,7 @@ import { getDB } from "@src/infra/db";
 export const userRepository = {
   async getUserIdByEmail_god(userEmail: string) {
     const db = getDB("god");
-    const { data } = await db
-      .from("users")
-      .select("id")
-      .eq("email", userEmail);
+    const { data } = await db.from("users").select("id").eq("email", userEmail);
 
     return (data as unknown as any)[0]?.id as string;
   },
