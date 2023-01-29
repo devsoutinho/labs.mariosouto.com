@@ -5,7 +5,7 @@ const settings = {
   url: process.env.NEXT_PUBLIC_SUPABASE_DEVSOUTINHO_LABS_URL as string,
   public: process.env
     .NEXT_PUBLIC_SUPABASE_DEVSOUTINHO_LABS_KEY_PUBLIC as string,
-  god: process.env.NEXT_PUBLIC_SUPABASE_DEVSOUTINHO_LABS_KEY_SECRET as string,
+  god: process.env.SUPABASE_DEVSOUTINHO_LABS_KEY_SECRET as string,
 } as const;
 
 export function getDB(mode: "god" | "public" = "public") {
