@@ -5,18 +5,48 @@ export interface Workshop {
   name: string;
   description: string;
   slug: string;
+  stripe_price_id: string;
 }
 
+const TABLE_NAME = "course";
 export const workshopsRepository = {
+  async getWorkshopByStripePriceId(
+    stripePriceId: string
+  ): Promise<Workshop | null> {
+    const db = getDB("god");
+    const { data } = await db
+      .from(TABLE_NAME)
+      .select("*")
+      .eq("stripe_price_id", stripePriceId);
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const output = (data as unknown as any)[0] as Workshop;
+    return output;
+  },
+  async registerStudent(
+    workshopId: string,
+    studentEmail: string
+  ): Promise<void> {
+    // eslint-disable-next-line no-console
+    console.log({
+      workshopId,
+      studentEmail,
+    });
+    const db = getDB("god");
+    await db.from("course_student").insert({
+      course_id: workshopId,
+      student_email: studentEmail,
+    });
+  },
   async getAll(): Promise<Workshop[]> {
     const db = getDB("god");
-    const { data } = await db.from("courses").select("*");
+    const { data } = await db.from(TABLE_NAME).select("*");
     const output = data as Workshop[];
     return output;
   },
   async getBySlug(slug: string): Promise<Workshop> {
     const db = getDB("god");
-    const { data } = await db.from("courses").select("*").eq("slug", slug);
+    const { data } = await db.from(TABLE_NAME).select("*").eq("slug", slug);
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const output = (data as unknown as any)[0] as Workshop;

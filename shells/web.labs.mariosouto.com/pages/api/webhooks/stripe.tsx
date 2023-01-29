@@ -4,9 +4,14 @@ import Stripe from "stripe";
 import { NextApiRequest, NextApiResponse } from "next";
 import { buffer } from "micro";
 import { login } from "@src/infra/auth/login";
+import { workshopsRepository } from "@src/modules/workshops/repository";
 
 const KEY = process.env.STRIPE_SECRET_KEY as string;
 const WH_KEY = process.env.STRIPE_WEBHOOK_KEY as string;
+
+const stripe = new Stripe(KEY, {
+  apiVersion: "2022-11-15",
+});
 
 const eventHandlers = {
   "payment_intent.succeeded": async (data: any) => {
@@ -15,7 +20,22 @@ const eventHandlers = {
   "checkout.session.completed": async (data: any) => {
     const customerEmail = data.customer_details.email;
     await login("emailOnly", customerEmail);
-    // TODO: Sent email to customer with next steps, invite to discord, etc.
+
+    const sessionData = await stripe.checkout.sessions.retrieve(data.id, {
+      expand: ["line_items"],
+    });
+
+    sessionData.line_items?.data?.forEach(async (item: any) => {
+      const stripePriceId = item.price.id;
+
+      const workshop = await workshopsRepository.getWorkshopByStripePriceId(
+        stripePriceId
+      );
+
+      if (workshop) {
+        workshopsRepository.registerStudent(workshop.id, customerEmail);
+      }
+    });
   },
 };
 
@@ -33,10 +53,6 @@ export default async function handler(
     res.setHeader("Allow", "POST");
     res.status(405).end("Method Not Allowed");
   }
-
-  const stripe = new Stripe(KEY, {
-    apiVersion: "2022-11-15",
-  });
 
   let event: Stripe.Event;
   const reqBuffer = await buffer(req);

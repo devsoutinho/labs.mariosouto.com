@@ -13,7 +13,7 @@ export function WorkshopScreen({ workshop }: WorkshopScreenProps) {
 
   const redirectToCheckout = async () => {
     const item = {
-      price: "price_1MVdm4LN2utuQszI6CIWZzje",
+      price: workshop.stripe_price_id,
       quantity: 1,
     };
     const stripe = await getStripe();
@@ -22,8 +22,8 @@ export function WorkshopScreen({ workshop }: WorkshopScreenProps) {
       lineItems: [item],
       mode: "payment",
       ...(userEmail && { customerEmail: userEmail }),
-      successUrl: `${window.location.origin}/checkout/success`,
-      cancelUrl: `${window.location.origin}/checkout/cancel`,
+      successUrl: `${window.location.origin}/checkout/success?workshop_id=${workshop.id}`,
+      cancelUrl: `${window.location.origin}/checkout/cancel?workshop_id=${workshop.id}`,
     });
 
     if (error) {

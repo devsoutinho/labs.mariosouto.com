@@ -23,6 +23,7 @@ interface Profile {
   id: string;
   first_name: string;
   avatar_url: string;
+  github_user: string;
 }
 export function DashboardScreen() {
   const { theme } = useTheme();
@@ -37,7 +38,7 @@ export function DashboardScreen() {
       try {
         const userInfo = await db.auth.getUser();
         const { data } = await db
-          .from("profiles")
+          .from("profile")
           .select("id, first_name, avatar_url");
 
         if (userInfo.data.user?.user_metadata) {
@@ -45,6 +46,7 @@ export function DashboardScreen() {
             id: userInfo.data.user.id,
             first_name: userInfo.data.user.user_metadata.name.split(" ")[0],
             avatar_url: userInfo.data.user.user_metadata.avatar_url,
+            github_user: userInfo.data.user.user_metadata.github_user,
           });
           return;
         }
