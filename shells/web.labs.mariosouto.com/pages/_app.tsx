@@ -1,3 +1,4 @@
+import "../src/theme/globals.css";
 import { Provider } from "@devsoutinho/sknui/web";
 import type { AppProps } from "next/app";
 import Head from "next/head";
