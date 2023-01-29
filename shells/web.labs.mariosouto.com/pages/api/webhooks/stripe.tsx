@@ -1,10 +1,23 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-console */
 import Stripe from "stripe";
 import { NextApiRequest, NextApiResponse } from "next";
-import { buffer } from "node:stream/consumers";
+import { buffer } from "micro";
+import { login } from "@src/infra/auth/login";
 
 const KEY = process.env.STRIPE_SECRET_KEY as string;
 const WH_KEY = process.env.STRIPE_WEBHOOK_KEY as string;
+
+const eventHandlers = {
+  "payment_intent.succeeded": async (data: any) => {
+    console.log("PaymentIntent was successful!", data);
+  },
+  "checkout.session.completed": async (data: any) => {
+    const customerEmail = data.customer_details.email;
+    await login("emailOnly", customerEmail);
+    // TODO: Sent email to customer with next steps, invite to discord, etc.
+  },
+};
 
 export const config = {
   api: {
@@ -29,8 +42,6 @@ export default async function handler(
   const reqBuffer = await buffer(req);
   const sig = req.headers["stripe-signature"] as string;
 
-  console.log("reqBuffer", reqBuffer);
-
   try {
     event = stripe.webhooks.constructEvent(reqBuffer, sig, WH_KEY);
   } catch (err) {
@@ -43,16 +54,19 @@ export default async function handler(
     return;
   }
 
-  switch (event.type) {
-    case "payment_intent.succeeded":
-      (() => {
-        const paymentIntent = event.data.object as Stripe.PaymentIntent;
-        console.log("paymentIntent", paymentIntent);
-      })();
-      break;
-    // ... handle other event types
-    default:
-      console.log(`Unhandled event type ${event.type}`);
+  const eventType = event.type as keyof typeof eventHandlers;
+
+  console.log("eventType", eventType);
+
+  if (eventHandlers[eventType]) {
+    try {
+      await eventHandlers[eventType](event.data.object);
+    } catch (err) {
+      const errMessage = (err as unknown as any).message;
+      res.status(400).send(`Unhandled error: ${errMessage}`);
+    }
+  } else {
+    console.error(`Unhandled event type ${event.type}`);
   }
 
   // Return a 200 response to acknowledge receipt of the event
