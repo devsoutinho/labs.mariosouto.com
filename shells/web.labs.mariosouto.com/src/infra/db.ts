@@ -5,10 +5,16 @@ const settings = {
   url: process.env.NEXT_PUBLIC_SUPABASE_DEVSOUTINHO_LABS_URL as string,
   public: process.env
     .NEXT_PUBLIC_SUPABASE_DEVSOUTINHO_LABS_KEY_PUBLIC as string,
+  god: process.env.SUPABASE_DEVSOUTINHO_LABS_KEY_SECRET as string,
 } as const;
 
-const supabase = createClient(settings.url, settings.public);
+let supabase = createClient(settings.url, settings.public);
 
-export function getDB() {
+export function getDB(mode: "god" | "public" = "public") {
+  supabase = createClient(settings.url, settings.public);
+
+  if (mode === "god") {
+    supabase = createClient(settings.url, settings.god);
+  }
   return supabase;
 }

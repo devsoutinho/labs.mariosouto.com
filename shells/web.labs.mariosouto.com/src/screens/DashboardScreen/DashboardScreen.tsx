@@ -10,6 +10,7 @@ import {
 import { logout } from "@src/infra/auth/login";
 import { getDB } from "@src/infra/db";
 import React from "react";
+import { Card } from "./patterns/Card";
 
 const challenges = [
   {
@@ -192,6 +193,26 @@ export function DashboardScreen() {
         </Box>
         <Link href="/">Voltar ao login</Link>
       </Box>
+      <Card>
+        <Text
+          tag="h1"
+          typographyToken={{
+            xs: "heading3",
+            md: "heading2",
+          }}
+          styleSheet={{
+            marginTop: theme.spacing.x6,
+            marginBottom: theme.spacing.x6,
+          }}
+        >
+          Workshops
+        </Text>
+        <Box tag="ul">
+          <Text tag="li">
+            <Link href="/workshops">Ver próximos</Link>
+          </Text>
+        </Box>
+      </Card>
       {isUserLoggedIn && (
         <Box
           styleSheet={{
