@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "proxy": "<http://localhost:3000>",
   "scripts": {
     "lint": "tsc && eslint './**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",

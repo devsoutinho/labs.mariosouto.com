@@ -11,16 +11,20 @@ export function CourseScreen({ course }: CourseScreenProps) {
       <Text tag="h1">{course.name}</Text>
       <Box>{course.description}</Box>
       <Box>Esse curso é um TESTE e nada será entregue caso efetue a compra</Box>
-      <Button
-        onTap={async () => {
-          const db = getDB();
-          const { data } = await db.auth.getSession();
+      <form action="/api/checkout" method="POST">
+        <Button
+          type="submit"
+          onTap={async () => {
+            const db = getDB();
+            const { data } = await db.auth.getSession();
 
-          alert("Comprar" + data.session?.user.email);
-        }}
-      >
-        Comprar
-      </Button>
+            // eslint-disable-next-line no-console
+            console.log("Comprar: ", data.session?.user.email);
+          }}
+        >
+          Comprar
+        </Button>
+      </form>
     </Box>
   );
 }
