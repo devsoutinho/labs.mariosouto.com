@@ -4,7 +4,9 @@ export function CheckoutSuccessScreen() {
   return (
     <Box>
       <Text tag="h1">Compra realizada com sucesso!</Text>
-      <Box>Que legal que você comprou o workshop :)</Box>
+      <Box>
+        Confira o e-mail usado durante o pagamento para saber os próximos passos
+      </Box>
     </Box>
   );
 }

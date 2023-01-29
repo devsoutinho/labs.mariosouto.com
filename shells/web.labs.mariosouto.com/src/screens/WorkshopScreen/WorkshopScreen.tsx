@@ -21,7 +21,7 @@ export function WorkshopScreen({ workshop }: WorkshopScreenProps) {
     const { error } = await stripe.redirectToCheckout({
       lineItems: [item],
       mode: "payment",
-      // ...(userEmail && { customerEmail: userEmail }),
+      ...(userEmail && { customerEmail: userEmail }),
       successUrl: `${window.location.origin}/checkout/success`,
       cancelUrl: `${window.location.origin}/checkout/cancel`,
     });

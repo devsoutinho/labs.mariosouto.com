@@ -1,6 +1,6 @@
 import { Box, Text } from "@devsoutinho/sknui/web";
 
-export function CheckoutSuccessScreen() {
+export function CheckoutCancelScreen() {
   return (
     <Box>
       <Text tag="h1">Compra realizada com sucesso!</Text>
