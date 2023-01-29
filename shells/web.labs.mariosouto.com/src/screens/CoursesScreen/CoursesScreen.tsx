@@ -1,3 +1,5 @@
+import { Box, Link, Text } from "@devsoutinho/sknui/web";
+
 interface Course {
   id: string;
   name: string;
@@ -10,16 +12,29 @@ interface CoursesScreenProps {
 }
 export function CoursesScreen({ courses }: CoursesScreenProps) {
   return (
-    <div>
-      <h1>Courses Screen</h1>
+    <Box>
+      <Box>Cursos e Aulas Ao vivo!</Box>
 
-      <ul>
+      <Box
+        tag="ul"
+        styleSheet={{
+          padding: "16px",
+        }}
+      >
         {courses.map((course) => (
-          <li key={course.id}>
-            <a href={`/courses/${course.slug}`}>{course.name}</a>
-          </li>
+          <Text
+            key={course.id}
+            tag="li"
+            styleSheet={{
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              display: "list-item" as any,
+              listStyleType: "disc",
+            }}
+          >
+            <Link href={`/courses/${course.slug}`}>{course.name}</Link>
+          </Text>
         ))}
-      </ul>
-    </div>
+      </Box>
+    </Box>
   );
 }
