@@ -10,6 +10,23 @@ export interface Workshop {
 
 const TABLE_NAME = "course";
 export const workshopsRepository = {
+  async isUserOwnerOfWorkshop(
+    workshopId: string,
+    userEmail: string
+  ): Promise<boolean> {
+    const db = getDB();
+    const { data, error } = await db
+      .from("course_student")
+      .select("*")
+      .eq("course_id", workshopId)
+      .eq("student_email", userEmail);
+
+    // eslint-disable-next-line no-console
+    console.log({ data, error });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const output = (data as unknown as any)[0] as Workshop;
+    return !!output;
+  },
   async getWorkshopByStripePriceId(
     stripePriceId: string
   ): Promise<Workshop | null> {

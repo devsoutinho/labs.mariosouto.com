@@ -1,7 +1,10 @@
 import { Box, Button, Text } from "@devsoutinho/sknui/web";
 import { getStripe } from "@src/infra/stripe";
 import { userRepository } from "@src/modules/user/respository";
-import { Workshop } from "@src/modules/workshops/repository";
+import {
+  Workshop,
+  workshopsRepository,
+} from "@src/modules/workshops/repository";
 import React from "react";
 
 interface WorkshopScreenProps {
@@ -9,6 +12,8 @@ interface WorkshopScreenProps {
 }
 
 export function WorkshopScreen({ workshop }: WorkshopScreenProps) {
+  const [loading, setLoading] = React.useState(false);
+  const [isUserOwner, setIsUserOwner] = React.useState(false);
   const [userEmail, setUserEmail] = React.useState<string | null>(null);
 
   const redirectToCheckout = async () => {
@@ -34,11 +39,30 @@ export function WorkshopScreen({ workshop }: WorkshopScreenProps) {
   React.useEffect(() => {
     (async () => {
       const email = await userRepository.getUserEmail();
-      // eslint-disable-next-line no-console
-      console.log(email);
+
       if (typeof email === "string") setUserEmail(email);
+
+      if (email) {
+        const isUserOwner = await workshopsRepository.isUserOwnerOfWorkshop(
+          workshop.id,
+          email
+        );
+        setIsUserOwner(isUserOwner);
+      }
+
+      setLoading(false);
     })();
   }, []);
+
+  if (isUserOwner)
+    return (
+      <Box>
+        Você já comprou este workshop, procure em seu e-mail pelos próximos
+        passos
+      </Box>
+    );
+
+  if (loading) return <Box>Carregando...</Box>;
 
   return (
     <Box
