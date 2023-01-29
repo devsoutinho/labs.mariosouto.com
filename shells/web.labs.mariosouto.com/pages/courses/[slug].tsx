@@ -1,16 +1,1 @@
-export { CoursesScreen as default } from "@src/screens/CoursesScreen/CoursesScreen";
-
-export function getStaticProps() {
-  return {
-    props: {
-      slug: "courses",
-    },
-  };
-}
-
-export function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: true,
-  };
-}
+export { CourseScreen as default } from "@src/screens/CourseScreen/CourseScreen";
