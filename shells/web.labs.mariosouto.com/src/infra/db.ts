@@ -12,7 +12,6 @@ export function getDB(mode: "god" | "public" = "public") {
   if (mode === "god") {
     return createClient(settings.url, settings.god);
   }
-  const supabase = createClient(settings.url, settings.public);
 
-  return supabase;
+  return createClient(settings.url, settings.public);
 }

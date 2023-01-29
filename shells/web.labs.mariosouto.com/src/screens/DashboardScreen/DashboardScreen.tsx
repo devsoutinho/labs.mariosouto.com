@@ -205,11 +205,11 @@ export function DashboardScreen() {
             marginBottom: theme.spacing.x6,
           }}
         >
-          Labs Live Class
+          Workshops
         </Text>
         <Box tag="ul">
           <Text tag="li">
-            <Link href="/courses/course-name">Nome do Curso - Turma 1</Link>
+            <Link href="/workshops">Ver próximos</Link>
           </Text>
         </Box>
       </Card>

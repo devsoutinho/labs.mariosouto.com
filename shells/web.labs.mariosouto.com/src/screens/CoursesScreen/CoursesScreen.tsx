@@ -13,7 +13,7 @@ interface CoursesScreenProps {
 export function CoursesScreen({ courses }: CoursesScreenProps) {
   return (
     <Box>
-      <Box>Cursos e Aulas Ao vivo!</Box>
+      <Box>Workshops ao vivo</Box>
 
       <Box
         tag="ul"
@@ -31,7 +31,7 @@ export function CoursesScreen({ courses }: CoursesScreenProps) {
               listStyleType: "disc",
             }}
           >
-            <Link href={`/courses/${course.slug}`}>{course.name}</Link>
+            <Link href={`/workshops/${course.slug}`}>{course.name}</Link>
           </Text>
         ))}
       </Box>

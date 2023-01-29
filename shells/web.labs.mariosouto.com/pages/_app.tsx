@@ -1,3 +1,4 @@
+import "@stripe/stripe-js";
 import { Provider } from "@devsoutinho/sknui/web";
 import type { AppProps } from "next/app";
 import Head from "next/head";
