@@ -6,7 +6,7 @@ export default function AuthScreen() {
   const router = useRouter();
 
   React.useEffect(() => {
-    router.push("/dashboard");
+    if (router.isReady) router.push("/dashboard");
   }, [router]);
 
   return (
