@@ -45,12 +45,14 @@ interface TextProps {
   styleSheet?: StyleSheet;
   typographyToken?: ResponsiveValue<TypographyToken>;
   children: React.ReactNode;
+  className?: string;
 }
 export function Text({
   typographyToken,
   styleSheet,
   children,
   tag,
+  className,
 }: TextProps) {
   const { theme } = useTheme();
   const Tag = tag || "p";
@@ -64,6 +66,7 @@ export function Text({
   return (
     <BoxPrimal
       tag={Tag}
+      className={className}
       styleSheet={{
         display: inlineTags.includes(Tag) ? "inline" : "block",
         ...typographyStyles,

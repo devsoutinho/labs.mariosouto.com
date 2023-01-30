@@ -82,7 +82,6 @@ export function Button({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    flex: 1,
     appearance: "none",
     gap: "8px",
     borderRadius: theme.rounded.md,
@@ -104,6 +103,7 @@ export function Button({
   return (
     <Touchable
       styleSheet={{
+        flex: 1,
         ...styleSheet,
         ...(buttonStyles as unknown as StyleSheet),
       }}

@@ -8,6 +8,7 @@ export function Workshops({ workshops }: WorkshopsProps) {
   const { theme } = useTheme();
   return (
     <Box
+      id="workshops"
       styleSheet={{
         position: "relative",
         backgroundColor: theme.colors.neutral.x050,
@@ -16,8 +17,7 @@ export function Workshops({ workshops }: WorkshopsProps) {
           lg: theme.spacing.x8,
         },
         paddingTop: {
-          xs: theme.spacing.x16,
-          lg: theme.spacing.x24,
+          xs: theme.spacing.x6,
         },
         paddingBottom: {
           xs: theme.spacing.x20,
