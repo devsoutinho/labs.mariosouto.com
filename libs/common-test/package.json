@@ -12,7 +12,7 @@
     "base.ts"
   ],
   "dependencies": {
-    "jest-environment-jsdom": "29.3.1"
+    "jest-environment-jsdom": "29.4.1"
   },
   "devDependencies": {
     "@testing-library/react": "13.4.0",
