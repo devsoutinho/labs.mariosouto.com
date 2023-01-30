@@ -13,6 +13,7 @@ export const workshopsRepository = {
       href: "/workshops/git-e-github-para-sobrevivencia",
       coverUrl: "https://i.ytimg.com/vi/BAmvmaKQklQ/maxresdefault.jpg",
     };
+    // https://www.youtube.com/watch?v=jOAU81jdi-c&list=PLTcmLKdIkOWmeNferJ292VYKBXydGeDej
     return [
       {
         ...item,

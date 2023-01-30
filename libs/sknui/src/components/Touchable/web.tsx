@@ -35,6 +35,9 @@ export function Touchable({
         background: "transparent",
         border: "none",
         transition: "opacity 0.2s",
+        _hover: {
+          opacity: 0.6,
+        },
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ...(styleSheet as unknown as any),
         _focusVisible: {

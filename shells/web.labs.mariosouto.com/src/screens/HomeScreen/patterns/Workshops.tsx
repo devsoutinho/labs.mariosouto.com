@@ -17,7 +17,8 @@ export function Workshops({ workshops }: WorkshopsProps) {
           lg: theme.spacing.x8,
         },
         paddingTop: {
-          xs: theme.spacing.x6,
+          xs: theme.spacing.x10,
+          md: theme.spacing.x6,
         },
         paddingBottom: {
           xs: theme.spacing.x20,

@@ -4,6 +4,7 @@ import {
   Image,
   Link,
   Text,
+  Touchable,
   useTheme,
 } from "@devsoutinho/sknui/web";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
@@ -11,30 +12,14 @@ import { ChevronRightIcon } from "@heroicons/react/20/solid";
 export function HeroSection() {
   const { theme } = useTheme();
   return (
-    <div className="relative isolate overflow-hidden bg-white">
-      <svg
-        className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern
-            id="0787a7c5-978c-4f66-83c7-11c213f99cb7"
-            width={200}
-            height={200}
-            x="50%"
-            y={-1}
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M.5 200V.5H200" fill="none" />
-          </pattern>
-        </defs>
-        <rect
-          width="100%"
-          height="100%"
-          strokeWidth={0}
-          fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)"
-        />
-      </svg>
+    <Box
+      styleSheet={{
+        position: "relative",
+        backgroundColor: theme.colors.neutral.x000,
+        isolation: "isolate",
+      }}
+    >
+      <BgPattern />
       <Box
         styleSheet={{
           maxWidth: "1280px",
@@ -62,16 +47,33 @@ export function HeroSection() {
               xs: theme.spacing.x_zero,
               lg: theme.spacing.x9,
             },
+            marginX: {
+              xs: "auto",
+              lg: theme.spacing.x_zero,
+            },
+            maxWidth: {
+              xs: "672px",
+              lg: "576px",
+            },
+            flexShrink: {
+              lg: "0",
+            },
+            paddingTop: {
+              lg: theme.spacing.x8,
+            },
           }}
-          className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8"
         >
-          <Image
+          <Touchable
+            href="/"
             styleSheet={{
               width: "60px",
             }}
-            src="https://github.com/devsoutinho.png"
-            alt="Your Company"
-          />
+          >
+            <Image
+              src="https://github.com/devsoutinho.png"
+              alt="Your Company"
+            />
+          </Touchable>
           <Box
             styleSheet={{
               marginTop: {
@@ -103,13 +105,26 @@ export function HeroSection() {
               >
                 {"Novidades"}
               </Text>
-              <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-600">
-                <span>CHANGELOG v1.0</span>
+              <Text
+                tag="span"
+                styleSheet={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: theme.spacing.x2,
+                  color: theme.colors.neutral.x600,
+                }}
+                typographyToken="body3"
+              >
+                <Box tag="span">CHANGELOG v1.0</Box>
                 <ChevronRightIcon
-                  className="h-5 w-5 text-gray-400"
+                  style={{
+                    width: theme.spacing.x5,
+                    height: theme.spacing.x5,
+                    color: theme.colors.neutral.x400,
+                  }}
                   aria-hidden="true"
                 />
-              </span>
+              </Text>
             </Link>
           </Box>
           <Text
@@ -123,17 +138,23 @@ export function HeroSection() {
           >
             DevSoutinho Labs
           </Text>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <Text
+            typographyToken="body1"
+            styleSheet={{
+              marginTop: theme.spacing.x6,
+              color: theme.colors.neutral.x600,
+            }}
+          >
             O espaço perfeito pra você praticar programação aprender e
             compartilhar
-          </p>
+          </Text>
           <Box
             styleSheet={{
-              flexDirection: "row",
-              marginTop: {
-                xs: theme.spacing.x4,
-                md: theme.spacing.x10,
+              flexDirection: {
+                xs: "column",
+                sm: "row",
               },
+              marginTop: theme.spacing.x10,
               alignItems: {
                 xs: "center",
               },
@@ -142,7 +163,8 @@ export function HeroSection() {
                 md: "flex-start",
               },
               gap: {
-                xs: theme.spacing.x4,
+                xs: theme.spacing.x2,
+                sm: theme.spacing.x10,
               },
             }}
           >
@@ -156,7 +178,10 @@ export function HeroSection() {
               onTap={() => {
                 const element = document.getElementById("workshops");
                 if (element)
-                  element.scrollIntoView({ behavior: "smooth", block: "end" });
+                  element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
               }}
             >
               Conheça os Workshops
@@ -186,19 +211,89 @@ export function HeroSection() {
             justifyContent: "flex-end",
           }}
         >
-          <Box className="max-w-3xl sm:max-w-5xl lg:max-w-none">
-            <Box className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-              <img
+          <Box
+            styleSheet={{
+              maxWidth: {
+                xs: "768px",
+                sm: "1024px",
+                lg: "none",
+              },
+            }}
+          >
+            <Box
+              styleSheet={{
+                borderRadius: {
+                  xs: theme.rounded.xl,
+                  lg: theme.rounded["2xl"],
+                },
+                margin: {
+                  xs: "-8px",
+                  lg: "-16px",
+                },
+                background:
+                  "rgba(17, 24, 39, 0.05) none repeat scroll 0% 0% / auto padding-box border-box",
+                boxShadow:
+                  "'rgb(255, 255, 255) 0px 0px 0px 0px inset, rgba(17, 24, 39, 0.1) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px'",
+                padding: {
+                  xs: theme.spacing.x2,
+                  lg: theme.spacing.x4,
+                },
+              }}
+            >
+              <Image
                 src="/images/home-image-discord.png"
                 alt="App screenshot"
-                width={2432}
-                height={1442}
-                className="w-[76rem] rounded-md shadow-2xl ring-1 ring-gray-900/10"
+                styleSheet={{
+                  borderRadius: theme.rounded.md,
+                  boxShadow: "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px",
+                }}
               />
             </Box>
           </Box>
         </Box>
       </Box>
-    </div>
+    </Box>
+  );
+}
+
+function BgPattern() {
+  const { theme } = useTheme();
+
+  return (
+    <Box
+      tag="svg"
+      styleSheet={{
+        position: "absolute",
+        top: "0",
+        right: "0",
+        left: "0",
+        bottom: "0",
+        width: "100%",
+        height: "100%",
+        zIndex: "-10",
+        stroke: theme.colors.neutral.x200,
+        maskImage: "radial-gradient(100% 100% at top right,white,transparent)",
+      }}
+      aria-hidden="true"
+    >
+      <defs>
+        <pattern
+          id="0787a7c5-978c-4f66-83c7-11c213f99cb7"
+          width={200}
+          height={200}
+          x="50%"
+          y={-1}
+          patternUnits="userSpaceOnUse"
+        >
+          <path d="M.5 200V.5H200" fill="none" />
+        </pattern>
+      </defs>
+      <rect
+        width="100%"
+        height="100%"
+        strokeWidth={0}
+        fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)"
+      />
+    </Box>
   );
 }

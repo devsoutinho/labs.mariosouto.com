@@ -59,4 +59,6 @@ export type StyleSheetCommon = {
   _focus?: StyleSheetCommonState;
   _disabled?: StyleSheetCommonState;
   _focusVisible?: StyleSheetCommonState;
+  // NEW
+  maskImage?: ResponsiveValue<string>;
 };

@@ -19,6 +19,9 @@ export function Box({ styleSheet, children, innerRef, ...props }: BoxProps) {
         flexDirection: "column",
         ...styleSheet,
       }}
+      sx={{
+        maskImage: styleSheet?.maskImage,
+      }}
       {...props}
     >
       {children}
