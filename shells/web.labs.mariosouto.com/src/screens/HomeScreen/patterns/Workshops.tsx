@@ -86,6 +86,7 @@ export function Workshops({ workshops }: WorkshopsProps) {
         >
           {workshops.map((workshop) => (
             <Touchable
+              disabled={!workshop.active}
               href={
                 workshop.premium
                   ? `/workshops/${workshop.slug}`

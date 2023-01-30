@@ -28,6 +28,7 @@ export interface Workshop {
   slug?: string;
   excerpt: string;
   externalUrl?: string;
+  active: boolean;
   image: {
     url: string;
     alt: string;
@@ -50,6 +51,7 @@ export const workshopsRepository = {
             url
             alt
           }
+          active
           premium
         }
       }
