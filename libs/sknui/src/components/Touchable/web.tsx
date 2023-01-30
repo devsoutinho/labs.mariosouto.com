@@ -18,6 +18,7 @@ export function Touchable({
 }: TouchableProps) {
   const isLink = Boolean(href);
   const Tag = isLink ? "a" : "button";
+  const isExternal = href?.startsWith("http");
   const outlineStyles = isLink
     ? {
         borderRadius: "2px",
@@ -32,6 +33,7 @@ export function Touchable({
     <BoxPrimal
       tag={Tag}
       href={href}
+      target={isLink ? isExternal && "_blank" : undefined}
       styleSheet={{
         background: "transparent",
         border: "none",

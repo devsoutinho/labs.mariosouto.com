@@ -86,12 +86,17 @@ export function Workshops({ workshops }: WorkshopsProps) {
         >
           {workshops.map((workshop) => (
             <Touchable
-              href={`/workshops/${workshop.slug}`}
+              href={
+                workshop.premium
+                  ? `/workshops/${workshop.slug}`
+                  : workshop.externalUrl
+              }
               key={workshop.title}
               styleSheet={{
                 flexDirection: "column",
                 borderRadius: theme.rounded.lg,
                 boxShadow: theme.shadow.lg,
+                overflow: "hidden",
               }}
             >
               <Box
@@ -100,17 +105,19 @@ export function Workshops({ workshops }: WorkshopsProps) {
                 }}
               >
                 <Image
-                  src={workshop.coverUrl}
+                  src={workshop.image.url}
+                  alt={workshop.image.alt}
                   styleSheet={{
                     aspectRatio: "16/9",
                   }}
-                  alt=""
                 />
               </Box>
               <Box
                 styleSheet={{
                   flex: 1,
+                  width: "100%",
                   flexDirection: "column",
+                  textAlign: "left",
                   justifyContent: "space-between",
                   backgroundColor: theme.colors.neutral.x000,
                   padding: theme.spacing.x6,

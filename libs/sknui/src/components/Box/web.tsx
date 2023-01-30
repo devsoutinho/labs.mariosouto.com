@@ -11,16 +11,20 @@ interface BoxProps {
   [key: string]: any;
 }
 export function Box({ styleSheet, children, innerRef, ...props }: BoxProps) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { maskImage, aspectRatio, ...styleSheetPure } = styleSheet as any;
+
   return (
     <BoxPrimal
       innerRef={innerRef}
       styleSheet={{
         display: "flex",
         flexDirection: "column",
-        ...styleSheet,
+        ...styleSheetPure,
       }}
       sx={{
-        maskImage: styleSheet?.maskImage,
+        maskImage: maskImage,
+        aspectRatio: aspectRatio,
       }}
       {...props}
     >
@@ -28,3 +32,8 @@ export function Box({ styleSheet, children, innerRef, ...props }: BoxProps) {
     </BoxPrimal>
   );
 }
+
+Box.defaultProps = {
+  tag: "div",
+  styleSheet: {},
+};

@@ -45,7 +45,7 @@ export type StyleSheetCommon = {
   fontSize?: ResponsiveValue<NumericValue>;
   fontWeight?: ResponsiveValue<number>;
   lineHeight?: ResponsiveValue<number>;
-  overflow?: never;
+  overflow?: "hidden";
   opacity?: ResponsiveValue<number>;
   boxShadow?: ResponsiveValue<string>;
   // Border
