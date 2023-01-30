@@ -8,6 +8,7 @@ function datoCMSClient({ query }: DatoCMSClientParams, preview = isPreview) {
   const URL = preview
     ? "https://graphql.datocms.com/preview"
     : "https://graphql.datocms.com/";
+
   const Authorization = `Bearer ${process.env.NEXT_PUBLIC_DATOCMS_KEY}`;
 
   return fetch(URL, {
