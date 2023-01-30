@@ -7,6 +7,7 @@ interface TouchableProps {
   children: React.ReactNode;
   onTap?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
   styleSheet?: StyleSheet;
+  className?: string;
 }
 export function Touchable({
   styleSheet,

@@ -1,4 +1,4 @@
-import { Box, Text, useTheme } from "@devsoutinho/sknui/web";
+import { Box, Image, Text, Touchable, useTheme } from "@devsoutinho/sknui/web";
 import { Workshop } from "@src/modules/workshops/repository";
 
 interface WorkshopsProps {
@@ -85,62 +85,69 @@ export function Workshops({ workshops }: WorkshopsProps) {
           }}
         >
           {workshops.map((workshop) => (
-            <div
+            <Touchable
+              href={`/workshops/${workshop.slug}`}
               key={workshop.title}
-              className="flex flex-col overflow-hidden rounded-lg shadow-lg"
+              styleSheet={{
+                flexDirection: "column",
+                borderRadius: theme.rounded.lg,
+                boxShadow: theme.shadow.lg,
+              }}
             >
-              <div className="flex-shrink-0">
-                <img
-                  className="h-48 w-full object-cover"
+              <Box
+                styleSheet={{
+                  flexShrink: 0,
+                }}
+              >
+                <Image
                   src={workshop.coverUrl}
+                  styleSheet={{
+                    aspectRatio: "16/9",
+                  }}
                   alt=""
                 />
-              </div>
-              <div className="flex flex-1 flex-col justify-between bg-white p-6">
-                <div className="flex-1">
-                  {/* <p className="text-sm font-medium text-indigo-600">
-                    <a href={workshop.category.href} className="hover:underline">
-                      {workshop.category.name}
-                    </a>
-                  </p> */}
-                  <a href={workshop.href} className="mt-2 block">
-                    <p className="text-xl font-semibold text-gray-900">
+              </Box>
+              <Box
+                styleSheet={{
+                  flex: 1,
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  backgroundColor: theme.colors.neutral.x000,
+                  padding: theme.spacing.x6,
+                }}
+              >
+                <Box
+                  styleSheet={{
+                    flex: 1,
+                  }}
+                >
+                  <Box
+                    tag="span"
+                    styleSheet={{
+                      marginTop: theme.spacing.x2,
+                    }}
+                  >
+                    <Text
+                      typographyToken="heading4"
+                      styleSheet={{
+                        color: theme.colors.neutral.x900,
+                      }}
+                    >
                       {workshop.title}
-                    </p>
-                    {/* <p className="mt-3 text-base text-gray-500">
-                      {workshop.description}
-                    </p> */}
-                  </a>
-                </div>
-                <div className="mt-6 flex items-center">
-                  <div className="flex-shrink-0">
-                    {/* <a href={workshop.author.href}>
-                      <span className="sr-only">{workshop.author.name}</span>
-                      <img
-                        className="h-10 w-10 rounded-full"
-                        src={workshop.author.imageUrl}
-                        alt=""
-                      />
-                    </a> */}
-                  </div>
-                  <div className="ml-3">
-                    {/* <p className="text-sm font-medium text-gray-900">
-                      <a
-                        href={workshop.author.href}
-                        className="hover:underline"
-                      >
-                        {workshop.author.name}
-                      </a>
-                    </p> */}
-                    {/* <div className="flex space-x-1 text-sm text-gray-500">
-                      <time dateTime={workshop.datetime}>{workshop.date}</time>
-                      <span aria-hidden="true">&middot;</span>
-                      <span>{workshop.readingTime} read</span>
-                    </div> */}
-                  </div>
-                </div>
-              </div>
-            </div>
+                    </Text>
+                    <Text
+                      typographyToken="body2"
+                      styleSheet={{
+                        marginTop: theme.spacing.x3,
+                        color: theme.colors.neutral.x500,
+                      }}
+                    >
+                      {workshop.excerpt}
+                    </Text>
+                  </Box>
+                </Box>
+              </Box>
+            </Touchable>
           ))}
         </Box>
       </Box>

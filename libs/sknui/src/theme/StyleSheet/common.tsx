@@ -61,4 +61,5 @@ export type StyleSheetCommon = {
   _focusVisible?: StyleSheetCommonState;
   // NEW
   maskImage?: ResponsiveValue<string>;
+  aspectRatio?: ResponsiveValue<string>;
 };
