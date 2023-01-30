@@ -89,7 +89,7 @@ export function HeroSection() {
                 alignItems: "center",
                 gap: theme.spacing.x6,
               }}
-              href="https://github.com/devsoutinho/labs.mariosouto.com#readme"
+              href="https://github.com/devsoutinho/labs.mariosouto.com/blob/main/CHANGELOG.md"
             >
               <Text
                 tag="span"
