@@ -45,7 +45,7 @@ export type StyleSheetCommon = {
   fontSize?: ResponsiveValue<NumericValue>;
   fontWeight?: ResponsiveValue<number>;
   lineHeight?: ResponsiveValue<number>;
-  overflow?: never;
+  overflow?: "hidden";
   opacity?: ResponsiveValue<number>;
   boxShadow?: ResponsiveValue<string>;
   // Border
@@ -59,4 +59,7 @@ export type StyleSheetCommon = {
   _focus?: StyleSheetCommonState;
   _disabled?: StyleSheetCommonState;
   _focusVisible?: StyleSheetCommonState;
+  // NEW
+  maskImage?: ResponsiveValue<string>;
+  aspectRatio?: ResponsiveValue<string>;
 };
