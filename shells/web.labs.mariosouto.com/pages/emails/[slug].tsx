@@ -79,7 +79,9 @@ function template({ body }: TemplateProps) {
   `;
 
   const Footer = `
-    <mj-section background-color="${theme.colors.neutral.x900}">
+    <mj-section background-color="${
+      theme.colors.neutral.x900
+    }" padding-bottom="0">
       <mj-column align="center">
         <mj-text 
         font-size="${typographySmall.fontSize}"
@@ -88,7 +90,7 @@ function template({ body }: TemplateProps) {
           color="${theme.colors.neutral.x100}"
           align="center"
         >
-          DevSoutinho Labs © 2022, todos os direitos reservados.
+          DevSoutinho Labs © ${new Date().getFullYear()}, todos os direitos reservados.
         </mj-text>
       </mj-column>
     </mj-section>
