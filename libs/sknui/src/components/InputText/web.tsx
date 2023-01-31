@@ -7,6 +7,7 @@ import { Text } from "../Text/web";
 interface InputTextProps {
   label?: string;
   name?: string;
+  id?: string;
   disabled?: boolean;
   placeholder?: string;
   value?: string;
@@ -30,11 +31,13 @@ interface InputTextProps {
 export function InputText({
   label,
   name,
+  id,
   error,
   styleSheet,
   formRegister,
   value,
   onChange,
+  onBlur,
   disabled,
 }: InputTextProps) {
   const { theme } = useTheme();
@@ -48,11 +51,12 @@ export function InputText({
 
   const inputType = "text";
   const inputName = formRegisterName || name;
-  const inputId = `inputtext_${inputName}`;
+  const inputId = id || `inputtext_${inputName}`;
   const inputErrorId = `inputtext_${inputName}_error`;
   const inputError = formRegisterError || error;
   const inputValue = value;
   const inputOnChange = onChange;
+  const inputOnBlur = onBlur;
 
   const inputTextStateInvalidOrDefault = inputError ? "invalid" : "default";
   const inputTextState = disabled ? "disabled" : inputTextStateInvalidOrDefault;
@@ -121,6 +125,7 @@ export function InputText({
           styleSheet={inputStyleSheet}
           value={inputValue}
           onChange={inputOnChange}
+          onBlur={inputOnBlur}
           {...formRegisterProps}
         />
       </Box>
