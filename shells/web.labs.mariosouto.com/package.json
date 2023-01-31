@@ -13,6 +13,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "mjml": "^4.11.3",
+    "@types/mjml": "4.7.0",
     "@devsoutinho-labs/chat-gpt": "*",
     "@devsoutinho/sknui": "*",
     "@heroicons/react": "2.0.14",

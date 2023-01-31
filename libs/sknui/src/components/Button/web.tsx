@@ -4,8 +4,10 @@ import { StyleSheet } from "../../theme/StyleSheet/web";
 import { Text, Touchable } from "../web";
 
 interface ButtonProps {
+  id?: string;
   type?: "button" | "submit" | "reset";
   variant: "primary" | "secondary" | "accent" | "ghost" | "destructive";
+  disabled?: boolean;
   onTap?: () => void;
   styleSheet?: StyleSheet;
   children: React.ReactNode;

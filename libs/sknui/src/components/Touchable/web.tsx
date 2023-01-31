@@ -43,11 +43,6 @@ export function Touchable({
         _hover: {
           opacity: 0.6,
         },
-        ...(disabled && {
-          opacity: 0.4,
-          cursor: "not-allowed",
-          _hover: {},
-        }),
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ...(styleSheet as unknown as any),
         _focusVisible: {
@@ -55,6 +50,11 @@ export function Touchable({
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           ...(styleSheet?._focusVisible as unknown as any),
         },
+        ...(disabled && {
+          opacity: 0.4,
+          cursor: "not-allowed",
+          _hover: {},
+        }),
       }}
       onClick={onTap}
       disabled={disabled}
