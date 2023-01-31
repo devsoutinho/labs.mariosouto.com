@@ -95,8 +95,8 @@ function template({ body }: TemplateProps) {
     <mj-section background-color="${theme.colors.neutral.x900}">
       <mj-social font-size="12px" icon-size="20px" mode="horizontal">
       <mj-social-element name="youtube" href="https://youtube.com/@DevSoutinho/" />
-      <mj-social-element name="linkedin" href="https://linkedin.com/in/omariosouto/" />
-      <mj-social-element name="twitter" href="https://twitter.com/omariosouto/" />
+      <mj-social-element name="linkedin-noshare" href="https://linkedin.com/in/omariosouto/" />
+      <mj-social-element name="twitter-noshare" href="https://twitter.com/omariosouto/" />
     </mj-social>
   `;
 
