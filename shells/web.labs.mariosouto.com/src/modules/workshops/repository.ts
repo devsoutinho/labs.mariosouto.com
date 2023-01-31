@@ -1,10 +1,14 @@
 interface DatoCMSClientParams {
   query: string;
+  variables?: Record<string, unknown>;
 }
 
 const isPreview = process.env.NODE_ENV !== "production";
 
-function datoCMSClient({ query }: DatoCMSClientParams, preview = isPreview) {
+export function datoCMSClient(
+  { query, variables }: DatoCMSClientParams,
+  preview = isPreview
+) {
   const URL = preview
     ? "https://graphql.datocms.com/preview"
     : "https://graphql.datocms.com/";
@@ -19,6 +23,7 @@ function datoCMSClient({ query }: DatoCMSClientParams, preview = isPreview) {
     },
     body: JSON.stringify({
       query,
+      variables,
     }),
   }).then(async (res) => {
     if (res.ok) {
