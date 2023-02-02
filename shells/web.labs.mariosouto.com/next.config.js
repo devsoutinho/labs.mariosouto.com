@@ -23,6 +23,12 @@ const nextConfig = {
           "https://devsoutinho.notion.site/CSS-Preview-Border-Radius-DevSoutinhoChallenges-14fd017db675495b81ce5cd5f68981f0",
         permanent: true,
       },
+      {
+        source: "/challenges/002-css-flags-css",
+        destination:
+          "https://devsoutinho.notion.site/Desenho-com-CSS-Bandeiras-DevSoutinhoChallenges-800d9c4fceff4bb1a24cf218879b067f",
+        permanent: true,
+      },
     ];
   },
 };
