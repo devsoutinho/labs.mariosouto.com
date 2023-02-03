@@ -16,6 +16,10 @@ const challenges = [
     title: "#001 - CSS Preview Border Radius",
     link: "https://labs.mariosouto.com/challenges/001-css-preview-border-radius",
   },
+  {
+    title: "#002 - Desenho com CSS : Bandeiras",
+    link: "https://labs.mariosouto.com/challenges/002-css-flags-css",
+  },
 ];
 
 interface Profile {
