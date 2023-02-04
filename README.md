@@ -45,7 +45,7 @@ It's my company open sourced.
 yarn dev:web
 ```
 
-> We are using NextJS, just open your browse and code on top of it :)
+> We are using NextJS, just open your browse and code on top of it.
 
 ### App
 - Open a terminal tab and run:
