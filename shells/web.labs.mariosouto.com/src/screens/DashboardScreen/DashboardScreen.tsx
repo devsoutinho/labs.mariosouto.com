@@ -32,7 +32,7 @@ export function DashboardScreen() {
   const maxWidth = "600px";
   const [profile, setProfile] = React.useState<Partial<Profile>>();
   const db = getDB();
-  const isUserLoggedIn = !!profile;
+  const isUserLoggedIn = Boolean(profile);
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
