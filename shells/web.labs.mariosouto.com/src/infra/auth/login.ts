@@ -56,5 +56,5 @@ export async function login(provider: LoginProviders, email?: string) {
 export async function logout() {
   const db = getDB();
   await db.auth.signOut();
-  window.location.assign("/");
+  window.location.assign("/login");
 }

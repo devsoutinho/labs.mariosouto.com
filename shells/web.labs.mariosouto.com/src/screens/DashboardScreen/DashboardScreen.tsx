@@ -39,9 +39,6 @@ export function DashboardScreen() {
     (async () => {
       try {
         const userInfo = await db.auth.getUser();
-        const { data } = await db
-          .from("profiles")
-          .select("id, first_name, avatar_url");
 
         if (userInfo.data.user?.user_metadata) {
           setProfile({
@@ -51,9 +48,6 @@ export function DashboardScreen() {
           });
           return;
         }
-
-        const loggedUser = data && data[0];
-        if (loggedUser) setProfile(loggedUser);
       } catch (error) {
         console.error(error);
       } finally {

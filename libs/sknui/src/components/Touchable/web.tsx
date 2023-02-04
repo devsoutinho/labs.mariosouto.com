@@ -35,7 +35,7 @@ export function Touchable({
     <BoxPrimal
       tag={Tag}
       href={href}
-      target={isLink ? isExternal && "_blank" : undefined}
+      target={isLink ? (isExternal ? "_blank" : undefined) : undefined}
       styleSheet={{
         background: "transparent",
         border: "none",
