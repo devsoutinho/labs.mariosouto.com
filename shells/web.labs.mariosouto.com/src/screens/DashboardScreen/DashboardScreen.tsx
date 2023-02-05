@@ -56,6 +56,25 @@ export function DashboardScreen() {
     })();
   }, [db]);
 
+  React.useEffect(() => {
+    (async () => {
+      const session = await db.auth.getSession();
+
+      fetch("/api/devsoutinho-labs/student", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${session.data.session?.access_token}`,
+        },
+      }).then(async (res) => {
+        if (res.ok) {
+          const output = await res.json();
+          // eslint-disable-next-line no-console
+          console.log(output);
+        }
+      });
+    })();
+  }, []);
+
   if (isLoading) return <Text>Loading...</Text>;
 
   return (
@@ -188,7 +207,7 @@ export function DashboardScreen() {
             </Text>
           ))}
         </Box>
-        <Link href="/">Voltar ao login</Link>
+        <Link href="/login">Voltar ao login</Link>
       </Box>
       {isUserLoggedIn && (
         <Box
