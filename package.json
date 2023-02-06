@@ -10,7 +10,7 @@
       ]
     },
   "devDependencies": {
-    "@types/jest": "^29.2.5"
+    "@types/jest": "^29.4.0"
   },
   "dependencies": {
     "eslint-plugin-prettier": "4.2.1",
