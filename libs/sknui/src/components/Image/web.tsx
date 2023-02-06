@@ -11,12 +11,20 @@ export function Image({ src, alt, styleSheet }: ImageProps) {
     styleSheet || {};
 
   return (
-    <Box tag="picture" styleSheet={pictureStyleSheet}>
+    <Box
+      tag="picture"
+      styleSheet={{
+        ...pictureStyleSheet,
+        overflow: "hidden",
+        borderRadius,
+      }}
+    >
       <Box
         tag="img"
         src={src}
         alt={alt}
         style={{
+          overflow: "hidden",
           borderRadius,
           objectPosition,
           objectFit: objectFit || "cover",

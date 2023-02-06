@@ -46,6 +46,7 @@ module.exports = {
   "ignorePatterns": [
     "node_modules/",
     "dist/",
+    "types/",
   ],
   "globals": {
     "globalThis": false,
