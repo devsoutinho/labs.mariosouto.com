@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "types:generate": "npx supabase gen types typescript --project-id \"gzyhvgahmocmqouvprum\" --schema public > @types/supabase.ts",
     "lint": "tsc && eslint './**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",
     "test": "jest --maxWorkers=2",
@@ -13,6 +14,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@supabase/auth-helpers-nextjs": "0.5.4",
     "mjml": "^4.11.3",
     "@types/mjml": "4.7.0",
     "@devsoutinho-labs/chat-gpt": "*",

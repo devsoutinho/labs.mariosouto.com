@@ -32,7 +32,7 @@ export function DashboardScreen() {
   const maxWidth = "600px";
   const [profile, setProfile] = React.useState<Partial<Profile>>();
   const db = getDB();
-  const isUserLoggedIn = !!profile;
+  const isUserLoggedIn = Boolean(profile);
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -55,6 +55,25 @@ export function DashboardScreen() {
       }
     })();
   }, [db]);
+
+  React.useEffect(() => {
+    (async () => {
+      const session = await db.auth.getSession();
+
+      fetch("/api/devsoutinho-labs/student", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${session.data.session?.access_token}`,
+        },
+      }).then(async (res) => {
+        if (res.ok) {
+          const output = await res.json();
+          // eslint-disable-next-line no-console
+          console.log(output);
+        }
+      });
+    })();
+  }, []);
 
   if (isLoading) return <Text>Loading...</Text>;
 
@@ -188,7 +207,7 @@ export function DashboardScreen() {
             </Text>
           ))}
         </Box>
-        <Link href="/">Voltar ao login</Link>
+        <Link href="/login">Voltar ao login</Link>
       </Box>
       {isUserLoggedIn && (
         <Box

@@ -23,6 +23,7 @@ export function HeroSection() {
       <Box
         styleSheet={{
           maxWidth: "1280px",
+          width: "100%",
           margin: "auto",
           flexDirection: {
             sm: "row",
@@ -207,12 +208,15 @@ export function HeroSection() {
               md: "flex",
             },
             flex: 1,
+            width: "100%",
             alignItems: "flex-end",
             justifyContent: "flex-end",
           }}
         >
           <Box
             styleSheet={{
+              width: "100%",
+              flex: 1,
               maxWidth: {
                 xs: "768px",
                 sm: "1024px",
@@ -222,6 +226,7 @@ export function HeroSection() {
           >
             <Box
               styleSheet={{
+                flex: 1,
                 borderRadius: {
                   xs: theme.rounded.xl,
                   lg: theme.rounded["2xl"],
@@ -244,6 +249,9 @@ export function HeroSection() {
                 src="/images/home-image-discord.png"
                 alt="App screenshot"
                 styleSheet={{
+                  width: "100%",
+                  flex: 1,
+                  overflow: "hidden",
                   borderRadius: theme.rounded.md,
                   boxShadow: "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px",
                 }}
