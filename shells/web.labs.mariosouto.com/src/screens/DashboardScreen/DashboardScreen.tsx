@@ -61,7 +61,7 @@ export function DashboardScreen() {
       const session = await db.auth.getSession();
 
       fetch("/api/devsoutinho-labs/student", {
-        method: "POST",
+        method: "GET",
         headers: {
           Authorization: `Bearer ${session.data.session?.access_token}`,
         },
