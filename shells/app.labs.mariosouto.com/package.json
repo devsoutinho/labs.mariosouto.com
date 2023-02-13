@@ -30,7 +30,7 @@
     "@devsoutinho/common-lint": "*",
     "@expo/ngrok": "^4.1.0",
     "@testing-library/jest-native": "5.4.1",
-    "@testing-library/react-native": "^11.5.0",
+    "@testing-library/react-native": "^11.5.2",
     "@types/jest": "^29.2.5",
     "@types/react": "~18.0.24",
     "@types/react-native": "~0.70.6",

@@ -3166,6 +3166,13 @@
   dependencies:
     "@sinclair/typebox" "^0.24.1"
 
+"@jest/schemas@^29.4.2":
+  version "29.4.2"
+  resolved "https://registry.yarnpkg.com/@jest/schemas/-/schemas-29.4.2.tgz#cf7cfe97c5649f518452b176c47ed07486270fc1"
+  integrity sha512-ZrGzGfh31NtdVH8tn0mgJw4khQuNHiKqdzJAFbCaERbyCP9tHlxWuL/mnMu8P7e/+k4puWjI1NOzi/sFsjce/g==
+  dependencies:
+    "@sinclair/typebox" "^0.25.16"
+
 "@jest/source-map@^27.5.1":
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/@jest/source-map/-/source-map-27.5.1.tgz#6608391e465add4205eae073b55e7f279e04e8cf"
@@ -3952,6 +3959,11 @@
   version "0.24.51"
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.24.51.tgz#645f33fe4e02defe26f2f5c0410e1c094eac7f5f"
   integrity sha512-1P1OROm/rdubP5aFDSZQILU0vrLCJ4fvHt6EoqHEM+2D/G5MK3bIaymUKLit8Js9gbns5UyJnkP/TZROLw4tUA==
+
+"@sinclair/typebox@^0.25.16":
+  version "0.25.21"
+  resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.25.21.tgz#763b05a4b472c93a8db29b2c3e359d55b29ce272"
+  integrity sha512-gFukHN4t8K4+wVC+ECqeqwzBDeFeTzBXroBTqE6vcWrQGbEUpHO7LYdG0f4xnvYq4VOEwITSlHlp0JBAIFMS/g==
 
 "@sindresorhus/is@^4.0.0":
   version "4.6.0"
@@ -5169,12 +5181,12 @@
     pretty-format "^29.0.3"
     redent "^3.0.0"
 
-"@testing-library/react-native@^11.5.0":
-  version "11.5.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/react-native/-/react-native-11.5.0.tgz#b043c5db7b15eca42a65e95d3f3ae196fab9493b"
-  integrity sha512-seV+qebsbX4E5CWk/wizU1+2wVLsPyqEzG7sTgrhJ81cgAawg7ay06fIZR9IS75pDeWn2KZVd4mGk1pjJ3i3Zw==
+"@testing-library/react-native@^11.5.2":
+  version "11.5.2"
+  resolved "https://registry.yarnpkg.com/@testing-library/react-native/-/react-native-11.5.2.tgz#64238431de1ce4e128810bf8277a7cc118f1c812"
+  integrity sha512-haa/82Sy4ngAbXF6VTw5U306ZQHWfv7OKxALA4AkMKnX+6frhSd9aAe9rp50CyI2XJsNna0Rh6G+CSw+SPztYg==
   dependencies:
-    pretty-format "^29.0.0"
+    pretty-format "^29.4.0"
 
 "@testing-library/react@13.4.0":
   version "13.4.0"
@@ -17117,12 +17129,12 @@ pretty-format@^28.1.3:
     ansi-styles "^5.0.0"
     react-is "^18.0.0"
 
-pretty-format@^29.0.0, pretty-format@^29.0.3, pretty-format@^29.3.1:
-  version "29.3.1"
-  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-29.3.1.tgz#1841cac822b02b4da8971dacb03e8a871b4722da"
-  integrity sha512-FyLnmb1cYJV8biEIiRyzRFvs2lry7PPIvOqKVe1GCUEYg4YGmlx1qG9EJNMxArYm7piII4qb8UV1Pncq5dxmcg==
+pretty-format@^29.0.0, pretty-format@^29.0.3, pretty-format@^29.3.1, pretty-format@^29.4.0:
+  version "29.4.2"
+  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-29.4.2.tgz#64bf5ccc0d718c03027d94ac957bdd32b3fb2401"
+  integrity sha512-qKlHR8yFVCbcEWba0H0TOC8dnLlO4vPlyEjRPw31FZ2Rupy9nLa8ZLbYny8gWEl8CkEhJqAE6IzdNELTBVcBEg==
   dependencies:
-    "@jest/schemas" "^29.0.0"
+    "@jest/schemas" "^29.4.2"
     ansi-styles "^5.0.0"
     react-is "^18.0.0"
 
